@@ -124,11 +124,11 @@ body.lendo .btn.grande{background:repeating-linear-gradient(-45deg,var(--tinta),
 .cat-title{font:800 21px/1.2 var(--tit);margin:28px 0 12px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
 .card{background:#fff;border-radius:var(--r);border:1px solid var(--linha);overflow:hidden;display:flex;flex-direction:column}
-.card .foto{display:block;aspect-ratio:1;background:#fff;padding:12px}
-.card .foto img{width:100%;height:100%;object-fit:contain}
+.card .foto{display:block;position:relative;aspect-ratio:1/1;overflow:hidden;background:#fff}
+.card .foto img{position:absolute;inset:12px;width:calc(100% - 24px);height:calc(100% - 24px);object-fit:contain}
 .card .corpo{padding:12px 14px 14px;display:flex;flex-direction:column;flex:1}
 .card .cat{margin:0;font-size:12px;font-weight:700;color:var(--azul);text-transform:uppercase;letter-spacing:.04em}
-.card h3{margin:4px 0;font-size:15px;line-height:1.3;font-weight:600}
+.card h3{margin:4px 0;font-size:15px;line-height:1.3;font-weight:600;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .card h3 a{color:var(--tinta);text-decoration:none}
 .aval{margin:0;font-size:13px;color:var(--tinta3)}
 .card .linha{margin-top:auto;padding-top:10px;display:flex;align-items:center;justify-content:space-between;gap:8px}
