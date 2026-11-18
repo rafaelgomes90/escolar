@@ -95,6 +95,8 @@
       if(acima.length){ var m = Math.min.apply(null, acima.map(function(p){ return p[attr]; })); return acima.filter(function(p){ return p[attr] === m; }); }
       var mx = Math.max.apply(null, com.map(function(p){ return p[attr]; })); return com.filter(function(p){ return p[attr] === mx; });
     }
+    function pref0(lista, cond){ var f = lista.filter(cond); return f.length ? f : lista; }
+    if(/caderno/.test(it.tipo)) c = temDet(it, /pequeno|1\/4|brochurinha/) ? pref0(c, function(p){ return p.pequeno; }) : pref0(c, function(p){ return !p.pequeno; });
     c = porAttr(c, 'cores', it.cores);
     c = porAttr(c, 'folhas', it.folhas);
     var mat = (temDet(it, /(\d+)\s*mat[ée]ria/) && +((it.det + ' ' + it.t).toLowerCase().match(/(\d+)\s*mat[ée]ria/)[1])) || 0;
@@ -105,7 +107,6 @@
     if(it.tipo === 'lapis' || it.tipo === 'lapis_cor' || it.tipo === 'giz_cera') c = (temDet(it, /jumbo|grosso|gizão|gizao/) && !negado(it, '(jumbo|grosso)')) ? pref(c, function(p){ return p.jumbo; }) : pref(c, function(p){ return !p.jumbo; });
     if(it.tipo === 'giz_cera') c = (temDet(it, /gel/) && !negado(it, 'gel')) ? pref(c, function(p){ return p.gel; }) : pref(c, function(p){ return !p.gel; });
     if(/caderno/.test(it.tipo)) c = temDet(it, /capa dura/) ? pref(c, function(p){ return p.capadura; }) : c;
-    if(/caderno/.test(it.tipo)) c = temDet(it, /pequeno|1\/4|brochurinha/) ? pref(c, function(p){ return p.pequeno; }) : pref(c, function(p){ return !p.pequeno; });
     if(it.tipo === 'regua') c = temDet(it, /15\s*cm/) ? pref(c, function(p){ return p.cm === 15; }) : temDet(it, /20\s*cm/) ? pref(c, function(p){ return p.cm === 20; }) : pref(c, function(p){ return p.cm === 30; });
     if(it.tipo === 'cola_branca'){ var g = (it.det + ' ' + it.t).toLowerCase().match(/(\d{2,4})\s*g/); if(g) c = pref(c, function(p){ return p.g && p.g >= +g[1]; }); }
     if(it.tipo === 'sulfite_a3' || it.tipo === 'sulfite'){ /* folha a folha */ }
