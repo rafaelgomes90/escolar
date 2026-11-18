@@ -19,7 +19,8 @@ Regras:
 - Não invente itens. Ignore cabeçalho, nome da escola, avisos, datas e instruções (ex.: "etiquetar com o nome").
 - Se uma linha tem dois materiais diferentes ("1 cola branca e 1 cola bastão"), separe em dois itens.
 - "Envelope pardo"/"envelope de papel" é envelope_pardo; "envelope"/"saco plástico ofício (com furos)" é saco_plastico; envelope plástico com botão é envelope. "Fita kraft"/"fita gomada" é "outro".
-- "Livro de história/literatura infantil", "gibi", "revista de passatempo", "jogo pedagógico/quebra-cabeça/memória" têm categoria própria. Livro DIDÁTICO ou de editora/sistema de ensino específico (ISBN, coleção da escola) é "outro".
+- livro_infantil só para "livro de história/literatura" SEM título definido (ex.: "1 livro de história de acordo com a idade"). Livro com TÍTULO, autor, editora, ISBN, didático ou de sistema de ensino é "outro", com o título em busca.
+- gibi para gibi/história em quadrinhos; passatempo só para livro de atividades/passatempo; "revista para recorte" e "revista velha" são "outro"; jogo_pedagogico para jogo/quebra-cabeça/memória/dominó.
 - Escova de dente, creme dental, toalha, sabonete, lenço umedecido e guardanapo de pano têm categoria própria. Muda de roupa, fralda e remédio são "outro".
 - "Papel colorido", "color set", "papel dobradura", "papel lustroso" e "bloco criativo" são color_set. "Papel A4", "folha ofício", "sulfite" são sulfite.
 - "Lápis grafite", "lápis preto", "lápis nº 2" são lapis. "Lápis jumbo/triangular grosso" também é lapis, com "jumbo" em det.
