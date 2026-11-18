@@ -8,7 +8,7 @@ import json, html, os
 
 BASE = "https://escolar.ofertadorafa.com.br"
 PIXEL = os.environ.get("PIXEL", "") or json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "config.json"))).get("pixel", "")
-V = "1"  # suba quando mudar CSS/JS (cache)
+V = "2"  # suba quando mudar CSS/JS (cache)
 ROOT = os.path.dirname(os.path.abspath(__file__))
 P = json.load(open(os.path.join(ROOT, "produtos.json"), encoding="utf-8"))
 T = json.load(open(os.path.join(ROOT, "painel", "tipos.json"), encoding="utf-8"))

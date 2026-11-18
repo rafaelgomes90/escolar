@@ -62,8 +62,9 @@
       .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(d){ if(!r.ok) throw (d.erro || 'Não consegui ler agora. Tente de novo.'); return d; }); })
       .then(function(d){
         if(!d.itens || !d.itens.length || d.legivel === false) throw 'Não achei itens de material nessa imagem. Tente uma foto mais de perto, com boa luz, ou cole o texto da lista.';
-        var nome = (inNome.value || '').trim() || d.aluno || '';
-        nome = nome.split(/\s+/)[0]; if(nome) nome = nome.charAt(0).toUpperCase() + nome.slice(1).toLowerCase();
+        var digitado = (inNome.value || '').trim().replace(/\s+/g, ' ');
+        var nome = digitado ? digitado.split(' ').slice(0, 2).join(' ') : (d.aluno || '').trim().split(/\s+/)[0] || '';
+        nome = nome.split(' ').map(function(w){ return w ? w.charAt(0).toUpperCase() + w.slice(1).toLowerCase() : w; }).join(' ');
         L = montar(d.itens, nome, d.serie || '');
         desenhar(); res.hidden = false; form.closest('.envio').classList.add('feito');
         res.scrollIntoView({behavior:'smooth', block:'start'});
@@ -78,7 +79,9 @@
   function faixa(v){ return v < 100 ? 'até R$ 100' : v < 200 ? 'R$ 100–200' : v < 350 ? 'R$ 200–350' : v < 500 ? 'R$ 350–500' : 'R$ 500+'; }
 
   // ---------------------------------------------------------------- casamento item -> produto
-  function temDet(it, re){ return re.test(((it.det || '') + ' ' + (it.t || '')).toLowerCase()); }
+  function txtDet(it){ return ((it.det || '') + ' ' + (it.t || '')).toLowerCase(); }
+  function negado(it, palavra){ return new RegExp('(n[aã]o|sem|evitar|nada de)[^.;:]{0,30}' + palavra).test(txtDet(it)); }
+  function temDet(it, re){ return re.test(txtDet(it)); }
   function opcoes(it){
     var c = (POR[it.tipo] || []).slice();
     if(!c.length) return [];
@@ -99,7 +102,8 @@
     // preferências por detalhe (filtro que relaxa se zerar)
     function pref(lista, cond){ var f = lista.filter(cond); return f.length ? f : lista; }
     if(it.tipo === 'lapis') c = temDet(it, /\b[2-8]b\b/) ? pref(c, function(p){ return p.b2; }) : pref(c, function(p){ return !p.b2; });
-    if(it.tipo === 'lapis' || it.tipo === 'lapis_cor' || it.tipo === 'giz_cera') c = temDet(it, /jumbo|grosso|gizão|gizao|triangular/) ? pref(c, function(p){ return p.jumbo; }) : pref(c, function(p){ return !p.jumbo; });
+    if(it.tipo === 'lapis' || it.tipo === 'lapis_cor' || it.tipo === 'giz_cera') c = (temDet(it, /jumbo|grosso|gizão|gizao/) && !negado(it, '(jumbo|grosso)')) ? pref(c, function(p){ return p.jumbo; }) : pref(c, function(p){ return !p.jumbo; });
+    if(it.tipo === 'giz_cera') c = (temDet(it, /gel/) && !negado(it, 'gel')) ? pref(c, function(p){ return p.gel; }) : pref(c, function(p){ return !p.gel; });
     if(/caderno/.test(it.tipo)) c = temDet(it, /capa dura/) ? pref(c, function(p){ return p.capadura; }) : c;
     if(it.tipo === 'regua') c = temDet(it, /15\s*cm/) ? pref(c, function(p){ return p.cm === 15; }) : temDet(it, /20\s*cm/) ? pref(c, function(p){ return p.cm === 20; }) : pref(c, function(p){ return p.cm === 30; });
     if(it.tipo === 'cola_branca'){ var g = (it.det + ' ' + it.t).toLowerCase().match(/(\d{2,4})\s*g/); if(g) c = pref(c, function(p){ return p.g && p.g >= +g[1]; }); }

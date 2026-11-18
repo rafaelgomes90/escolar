@@ -44,14 +44,15 @@ def limpar_kits():
 
 
 def vigia_codigo():
-    """Se o server.py mudar (git pull), sai: o Docker (restart: unless-stopped) sobe a versão nova."""
-    me = os.path.abspath(__file__)
-    t0 = os.path.getmtime(me)
+    """Se server.py, prompt.txt ou tipos.json mudarem (git pull), sai: o Docker (restart: unless-stopped) sobe a versão nova."""
+    base = os.path.dirname(os.path.abspath(__file__))
+    arqs = [os.path.join(base, n) for n in ('server.py', 'prompt.txt', 'tipos.json')]
+    t0 = {a: os.path.getmtime(a) for a in arqs if os.path.exists(a)}
     while True:
         time.sleep(30)
         try:
-            if os.path.getmtime(me) != t0:
-                print('server.py mudou, reiniciando', flush=True); os._exit(0)
+            if any(os.path.getmtime(a) != t for a, t in t0.items()):
+                print('código mudou, reiniciando', flush=True); os._exit(0)
         except OSError:
             pass
 

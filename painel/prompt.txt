@@ -7,12 +7,12 @@ Devolva JSON com:
 - itens: um objeto por item de material da lista, na ordem em que aparecem.
 
 Cada item:
-- t: o item como está escrito na lista, resumido (ex.: "2 cadernos brochura 96 fls capa dura").
+- t: o item resumido com suas palavras, curto (até 8 palavras, sem copiar observações longas) (ex.: "2 cadernos brochura 96 fls capa dura").
 - tipo: o id da categoria abaixo que melhor descreve o item. Se nenhuma servir, "outro".
 - q: quantas unidades a lista pede, NA UNIDADE DA CATEGORIA (veja entre parênteses). Exemplos: "1 caixa de lápis de cor" = 1; "3 lápis pretos" = 3; "1 pacote de 100 folhas de sulfite" = 100; "500 folhas sulfite" = 500; "2 folhas de EVA" = 2; "1 metro de TNT" = 1; "1 dúzia de lápis" = 12; "1 caixa de lápis preto (12)" = 12. Sem quantidade escrita = 1.
 - cores: número de cores quando a lista diz (lápis de cor 24 cores = 24, guache 6 cores = 6, canetinha 12 = 12), senão null.
 - folhas: número de folhas do caderno quando a lista diz (96 fls = 96, 200 folhas = 200), senão null.
-- det: detalhes que importam na compra, curtos: cor, tamanho, "capa dura", "jumbo", "sem ponta", "10 matérias", "A3", "90g", marca exigida, tema. Vazio se não houver.
+- det: detalhes que importam na compra, curtos (quando a lista PROÍBE algo, escreva com "não", ex.: "não jumbo", "não gel"): cor, tamanho, "capa dura", "jumbo", "sem ponta", "10 matérias", "A3", "90g", marca exigida, tema. Vazio se não houver.
 - busca: termo curto pra buscar o produto num site de compras (3 a 6 palavras, sem quantidade), ex.: "caderno brochura capa dura 96 folhas".
 
 Regras:
