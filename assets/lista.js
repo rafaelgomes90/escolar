@@ -148,9 +148,9 @@
     return '<li class="ln"><a class="ln-foto" href="'+esc(p.link)+'" target="_blank" rel="noopener sponsored" data-ml="'+p.id+'" data-origem="lista-foto"><img src="'+esc(p.imagem)+'" alt="" loading="lazy"></a>'+
       '<div class="ln-tx"><p class="pediu">'+esc(it.t)+'</p>'+
       '<p class="nome"><a href="'+esc(p.link)+'" target="_blank" rel="noopener sponsored" data-ml="'+p.id+'" data-origem="lista-nome">'+qtxt+esc(p.nome)+'</a></p>'+
-      '<p class="meta">★ '+String(p.nota).replace('.',',')+(p.vendas?' · +'+esc(p.vendas)+' vendidos':'')+sobra+'</p>'+
+      '<p class="meta"><span class="loja '+(p.loja||'ml')+'">'+(p.loja==='shopee'?'Shopee':'Mercado Livre')+'</span> ★ '+String(p.nota).replace('.',',')+(p.vendas?' · +'+esc(p.vendas)+' vendidos':'')+sobra+'</p>'+
       '<div class="ln-acao"><b class="preco">R$ '+brl(o.custo)+'</b>'+troca+
-      '<a class="comprar" href="'+esc(p.link)+'" target="_blank" rel="noopener sponsored" data-ml="'+p.id+'" data-origem="lista-botao">Comprar</a></div></div></li>';
+      '<a class="comprar" href="'+esc(p.link)+'" target="_blank" rel="noopener sponsored" data-ml="'+p.id+'" data-origem="lista-botao">'+(p.loja==='shopee'?'Comprar na Shopee':'Comprar no ML')+'</a></div></div></li>';
   }
   function desenhar(){
     var t = total();
@@ -158,11 +158,11 @@
     res.innerHTML =
       '<div class="res-topo"><p class="eyebrow">'+(L.serie ? esc(L.serie)+' · ' : '')+L.linhas.length+' itens lidos</p>'+
       '<h2>'+esc(titulo())+' ficou <span class="total">R$ '+brl(t.v)+'</span></h2>'+
-      '<p class="sub">'+t.n+' itens com o menor preço que achamos no Mercado Livre'+(t.f ? ' · '+t.f+' pra você buscar' : '')+'. Cada item tem seu botão: você abre, confere o preço do dia e põe no carrinho do ML.</p>'+
+      '<p class="sub">'+t.n+' itens com o menor preço que achamos no Mercado Livre e na Shopee'+(t.f ? ' · '+t.f+' pra você buscar' : '')+'. Cada item tem seu botão: você abre, confere o preço do dia e põe no carrinho da loja.</p>'+
       '<div class="res-btns"><button type="button" class="btn wa compartilha">Mandar a lista no WhatsApp</button><button type="button" class="btn sec salva-img">Salvar imagem</button></div></div>'+
       '<ol class="linhas">'+L.linhas.map(function(x, i){ return x.op.length ? linhaHTML(x, i) : ''; }).join('')+'</ol>'+
       (fora.length ? '<h3 class="fora-tit">Pra buscar à parte</h3><ol class="linhas">'+L.linhas.map(function(x, i){ return x.op.length ? '' : linhaHTML(x, i); }).join('')+'</ol>' : '')+
-      '<div class="res-fim"><p>Total aproximado <b>R$ '+brl(t.v)+'</b></p><p class="disc">Preços do Mercado Livre conferidos por nós e que mudam todo dia; o valor que vale é o do anúncio. Frete à parte (muitos têm frete grátis acima de R$ 79 no carrinho).</p>'+
+      '<div class="res-fim"><p>Total aproximado <b>R$ '+brl(t.v)+'</b></p><p class="disc">Preços do Mercado Livre e da Shopee conferidos por nós e que mudam todo dia; o valor que vale é o do anúncio. Frete à parte: juntando os itens de cada loja no mesmo carrinho, muitos saem com frete grátis.</p>'+
       '<button type="button" class="btn wa compartilha">Mandar a lista no WhatsApp</button></div>';
     prepararImagem();
   }
@@ -182,12 +182,12 @@
     L.linhas.forEach(function(x){
       if(!x.op.length) return;
       var o = x.op[x.k], p = o.p, tp = TIPO[p.tipo] || {};
-      l.push((tp.emoji||'•')+' *'+(o.pk > 1 ? o.pk+'× ' : '')+p.nome+'* · R$ '+brl(o.custo));
+      l.push((tp.emoji||'•')+' *'+(o.pk > 1 ? o.pk+'× ' : '')+p.nome+'* · R$ '+brl(o.custo)+(p.loja==='shopee' ? ' (Shopee)' : ' (ML)'));
       l.push('👉 '+p.link);
     });
     var fora = L.linhas.filter(function(x){ return !x.op.length; });
     if(fora.length){ l.push('', '🔎 Pra buscar à parte:'); fora.forEach(function(x){ l.push('• '+x.it.t); }); }
-    l.push('', '💰 *Total: R$ '+brl(t.v)+'*', '_Preços aproximados do Mercado Livre; o valor do dia aparece no anúncio._');
+    l.push('', '💰 *Total: R$ '+brl(t.v)+'*', '_Preços aproximados do Mercado Livre e da Shopee; o valor do dia aparece no anúncio._');
     if(link) l.push('', 'Tire uma foto da sua lista e veja quanto fica:', SITE);
     return l.join('\n');
   }
@@ -237,7 +237,7 @@
       });
       var resto = t.n - ds.length;
       c.fillStyle = '#3B4766'; c.font = '600 44px Caveat, cursive';
-      c.fillText(resto > 0 ? '+ '+resto+' itens, tudo com link do Mercado Livre' : 'tudo com link do Mercado Livre', 130, 1176);
+      c.fillText(resto > 0 ? '+ '+resto+' itens, com link do Mercado Livre e da Shopee' : 'com link do Mercado Livre e da Shopee', 130, 1176);
       c.fillStyle = '#1D3A8A'; rr(c, 60, 1222, W-120, 84, 24); c.fill();
       c.fillStyle = '#fff'; c.font = '700 31px Inter, sans-serif'; c.textAlign = 'center'; c.fillText('Mande a foto da sua: escolar.ofertadorafa.com.br', W/2, 1275); c.textAlign = 'left';
       try{ IMG_DATA = cv.toDataURL('image/jpeg', .84); }catch(e){ IMG_DATA = null; }

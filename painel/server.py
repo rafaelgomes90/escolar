@@ -30,6 +30,7 @@ ESQUEMA = {'type': 'OBJECT', 'properties': {
         'cores': {'type': 'INTEGER', 'nullable': True}, 'folhas': {'type': 'INTEGER', 'nullable': True},
         'det': {'type': 'STRING'}, 'busca': {'type': 'STRING'}}, 'required': ['t', 'tipo', 'q', 'busca']}}},
     'required': ['legivel', 'itens']}
+CARGA_ATE = '2026-11-25'
 _rate = {}  # hash do IP -> [timestamps] (limite de kits salvos por hora)
 
 
@@ -190,23 +191,32 @@ class H(BaseHTTPRequestHandler):
 
     # ------------------------------------------------------------ fotos dos produtos (cache local, mesmo domínio = canvas sem CORS)
     def imagem(self, nome):
-        m = re.fullmatch(r'(\d{5,}-ML[AB]\d+_\d+)\.webp', nome)
-        if not m:
-            return self._json(404, {})
         os.makedirs(IMGS, exist_ok=True)
-        arq = os.path.join(IMGS, m.group(1) + '.webp')
+        m = re.fullmatch(r'(\d{5,}-ML[AB]\d+_\d+)\.webp', nome)
+        ms = re.fullmatch(r's/([a-z0-9]{2,3}-[a-z0-9-]{10,80})\.webp', nome)
+        if m:
+            arq = os.path.join(IMGS, m.group(1) + '.webp')
+            origem = f'https://http2.mlstatic.com/D_NQ_NP_2X_{m.group(1)}-F.webp'
+            ref = 'https://www.mercadolivre.com.br/'
+        elif ms:
+            arq = os.path.join(IMGS, 's-' + ms.group(1) + '.img')
+            origem = f'https://down-br.img.susercontent.com/file/{ms.group(1)}'
+            ref = 'https://shopee.com.br/'
+        else:
+            return self._json(404, {})
         if not os.path.exists(arq):
             try:
-                req = urllib.request.Request(f'https://http2.mlstatic.com/D_NQ_NP_2X_{m.group(1)}-F.webp',
-                                             headers={'User-Agent': 'Mozilla/5.0', 'Referer': 'https://www.mercadolivre.com.br/'})
+                req = urllib.request.Request(origem, headers={'User-Agent': 'Mozilla/5.0', 'Referer': ref})
                 with urllib.request.urlopen(req, timeout=8) as r:
                     b = r.read(3_000_000)
-                if b[:4] != b'RIFF':
-                    raise ValueError('nao e webp')
+                if not (b[:4] == b'RIFF' or b[:3] == b'\xff\xd8\xff' or b[:4] == b'\x89PNG'):
+                    raise ValueError('nao e imagem')
                 open(arq + '.tmp', 'wb').write(b); os.replace(arq + '.tmp', arq)
             except Exception:
                 return self._json(404, {})
-        return self._send(200, open(arq, 'rb').read(), 'image/webp', 'public, max-age=2592000')
+        b = open(arq, 'rb').read()
+        ct = 'image/webp' if b[:4] == b'RIFF' else 'image/png' if b[:4] == b'\x89PNG' else 'image/jpeg'
+        return self._send(200, b, ct, 'public, max-age=2592000')
 
     # ------------------------------------------------------------ leitura da lista (Gemini)
     def ler_lista(self):
@@ -283,6 +293,30 @@ class H(BaseHTTPRequestHandler):
             print('gemini falhou', ult, flush=True)
         return self._json(502, {'erro': 'Não consegui ler a lista agora. Tente de novo em instantes ou cole o texto.', 'motivo': clip(re.sub(r'key=[^&\s]+', '', ult or ''), 300)})
 
+    # ------------------------------------------------------------ carga temporária de dados do catálogo (coleta pelo navegador)
+    # Só funciona até CARGA_ATE; nome com 24+ caracteres aleatórios; até 8 MB; apagado em 2 dias.
+    def _carga_arq(self, nome):
+        if time.strftime('%Y-%m-%d') > CARGA_ATE or not re.fullmatch(r'[a-z0-9]{24,40}-[a-z0-9]{1,12}', nome):
+            return None
+        d = os.path.join(os.path.dirname(DB) or '.', 'carga'); os.makedirs(d, exist_ok=True)
+        for f in os.listdir(d):
+            p = os.path.join(d, f)
+            if os.path.getmtime(p) < time.time() - 2 * 86400: os.remove(p)
+        return os.path.join(d, nome + '.txt')
+
+    def carga_post(self, nome):
+        arq = self._carga_arq(nome); n = int(self.headers.get('Content-Length', 0))
+        if not arq or n <= 0 or n > 8_000_000:
+            return self._json(404, {})
+        open(arq, 'wb').write(self.rfile.read(n))
+        self.send_response(204); self.send_header('Access-Control-Allow-Origin', '*'); self.end_headers()
+
+    def carga_get(self, nome):
+        arq = self._carga_arq(nome)
+        if not arq or not os.path.exists(arq):
+            return self._json(404, {})
+        return self._send(200, open(arq, 'rb').read(), 'text/plain; charset=utf-8')
+
     def do_HEAD(self):
         return self.do_GET()
 
@@ -294,6 +328,8 @@ class H(BaseHTTPRequestHandler):
             return self.salvar_kit()
         if self.path.startswith('/api/lista'):
             return self.ler_lista()
+        if self.path.startswith('/api/carga/'):
+            return self.carga_post(self.path[11:].split('?')[0])
         if not self.path.startswith('/api/hit'):
             return self._json(404, {})
         try:
@@ -325,6 +361,8 @@ class H(BaseHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
+        if self.path.startswith('/api/carga/'):
+            return self.carga_get(self.path[11:].split('?')[0])
         if self.path.startswith('/img/'):
             return self.imagem(self.path[5:].split('?')[0])
         if self.path.startswith('/api/k/'):

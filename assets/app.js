@@ -21,7 +21,7 @@
     var a = e.target.closest && e.target.closest('a[data-ml]'); if(!a) return;
     var p = CSA.byId[a.getAttribute('data-ml')]; if(!p) return;
     CSA.track('InitiateCheckout',{content_name:p.nome,content_ids:[p.id],content_type:'product',content_category:p.tipo,value:p.preco,currency:'BRL'});
-    CSA.trackC('CliqueML',{produto:p.nome,produto_id:p.id,categoria:p.tipo,etiqueta:p.etiqueta,origem:a.getAttribute('data-origem')||'',pagina:location.pathname});
+    CSA.trackC('CliqueML',{produto:p.nome,produto_id:p.id,categoria:p.tipo,loja:p.loja||'ml',origem:a.getAttribute('data-origem')||'',pagina:location.pathname});
   });
 
   // Página de produto: ViewContent do produto

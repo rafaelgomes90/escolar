@@ -8,7 +8,7 @@ import json, html, os
 
 BASE = "https://escolar.ofertadorafa.com.br"
 PIXEL = os.environ.get("PIXEL", "") or json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "config.json"))).get("pixel", "")
-V = "2"  # suba quando mudar CSS/JS (cache)
+V = "3"  # suba quando mudar CSS/JS (cache)
 ROOT = os.path.dirname(os.path.abspath(__file__))
 P = json.load(open(os.path.join(ROOT, "produtos.json"), encoding="utf-8"))
 T = json.load(open(os.path.join(ROOT, "painel", "tipos.json"), encoding="utf-8"))
@@ -17,7 +17,7 @@ GRUPO = CFG.get("grupo_whatsapp", "").strip()
 TIPO = {t["id"]: t for t in T}
 for p in P:
     if p.get("pic"):
-        p["imagem"] = "/img/" + p["pic"] + ".webp"
+        p["imagem"] = ("/img/s/" + p["pic"][2:] if p["pic"].startswith("s:") else "/img/" + p["pic"]) + ".webp"
 
 e = lambda s: html.escape(str(s), quote=True)
 def brl(n): return f"{n:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
@@ -74,7 +74,7 @@ def card(p):
     <p class="cat">{e(t['emoji'])} {e(t['nome'])}</p>
     <h3>{ml(p, e(p['nome']), "", "catalogo-nome")}</h3>
     <p class="aval">★ <b>{nota(p['nota'])}</b>{(' · +' + e(p['vendas']) + ' vendidos') if p.get('vendas') else ''}</p>
-    <div class="linha"><p class="preco">R$ {brl(p['preco'])}</p>{ml(p, 'Ver no ML ' + ICON_EXT, "ml", "catalogo-botao")}</div>
+    <div class="linha"><p class="preco">R$ {brl(p['preco'])}</p>{ml(p, ('Ver na Shopee ' if p.get('loja') == 'shopee' else 'Ver no ML ') + ICON_EXT, "ml", "catalogo-botao")}</div>
   </div>
 </article>"""
 
