@@ -315,7 +315,9 @@ class H(BaseHTTPRequestHandler):
         arq = self._carga_arq(nome)
         if not arq or not os.path.exists(arq):
             return self._json(404, {})
-        return self._send(200, open(arq, 'rb').read(), 'text/plain; charset=utf-8')
+        b = open(arq, 'rb').read()
+        self.send_response(200); self.send_header('Content-Type', 'text/plain; charset=utf-8'); self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Cache-Control', 'no-store'); self.send_header('Content-Length', str(len(b))); self.end_headers(); self.wfile.write(b)
 
     def do_HEAD(self):
         return self.do_GET()
