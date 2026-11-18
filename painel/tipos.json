@@ -1,0 +1,873 @@
+[
+ {
+  "id": "lapis",
+  "nome": "Lápis preto (grafite)",
+  "unidade": "lápis",
+  "unidade_pl": "lápis",
+  "emoji": "✏️",
+  "termos": [
+   "lapis-grafite-caixa-12",
+   "lapis-grafite-triangular-jumbo",
+   "lapis-grafite-2b"
+  ],
+  "grupo": "escrita",
+  "busca": "https://meli.la/2HXtAVx"
+ },
+ {
+  "id": "borracha",
+  "nome": "Borracha",
+  "unidade": "borracha",
+  "unidade_pl": "borrachas",
+  "emoji": "🧽",
+  "termos": [
+   "borracha-branca-escolar-kit"
+  ],
+  "grupo": "escrita",
+  "busca": "https://meli.la/32JPLLi"
+ },
+ {
+  "id": "apontador",
+  "nome": "Apontador",
+  "unidade": "apontador",
+  "unidade_pl": "apontadores",
+  "emoji": "🔪",
+  "termos": [
+   "apontador-com-deposito-escolar"
+  ],
+  "grupo": "escrita",
+  "busca": "https://meli.la/2Y3oze1"
+ },
+ {
+  "id": "caneta",
+  "nome": "Caneta esferográfica",
+  "unidade": "caneta",
+  "unidade_pl": "canetas",
+  "emoji": "🖊️",
+  "termos": [
+   "caneta-esferografica-azul-bic-kit",
+   "caneta-bic-kit-azul-preta-vermelha"
+  ],
+  "grupo": "escrita",
+  "busca": "https://meli.la/2hDYB4g"
+ },
+ {
+  "id": "caneta_gel",
+  "nome": "Caneta gel/colorida",
+  "unidade": "caneta",
+  "unidade_pl": "canetas",
+  "emoji": "🖍️",
+  "termos": [
+   "caneta-gel-colorida-kit"
+  ],
+  "grupo": "escrita",
+  "busca": "https://meli.la/22FnDnw"
+ },
+ {
+  "id": "marca_texto",
+  "nome": "Marca-texto",
+  "unidade": "marca-texto",
+  "unidade_pl": "marca-textos",
+  "emoji": "🖍️",
+  "termos": [
+   "marca-texto-kit"
+  ],
+  "grupo": "escrita",
+  "busca": "https://meli.la/1LjUwJU"
+ },
+ {
+  "id": "corretivo",
+  "nome": "Corretivo",
+  "unidade": "corretivo",
+  "unidade_pl": "corretivos",
+  "emoji": "⬜",
+  "termos": [
+   "corretivo-fita-escolar"
+  ],
+  "grupo": "escrita",
+  "busca": "https://meli.la/1nt9pNf"
+ },
+ {
+  "id": "lapis_cor",
+  "nome": "Lápis de cor",
+  "unidade": "caixa",
+  "unidade_pl": "caixas",
+  "emoji": "🌈",
+  "termos": [
+   "lapis-de-cor-12-cores",
+   "lapis-de-cor-24-cores",
+   "lapis-de-cor-36-cores",
+   "lapis-de-cor-jumbo-12-cores"
+  ],
+  "grupo": "cores",
+  "busca": "https://meli.la/32HyMV5"
+ },
+ {
+  "id": "giz_cera",
+  "nome": "Giz de cera",
+  "unidade": "caixa",
+  "unidade_pl": "caixas",
+  "emoji": "🖍️",
+  "termos": [
+   "giz-de-cera-12-cores",
+   "giz-de-cera-gizao-jumbo"
+  ],
+  "grupo": "cores",
+  "busca": "https://meli.la/1R2Spb3"
+ },
+ {
+  "id": "canetinha",
+  "nome": "Canetinha hidrográfica",
+  "unidade": "estojo",
+  "unidade_pl": "estojos",
+  "emoji": "🖌️",
+  "termos": [
+   "canetinha-hidrografica-12-cores",
+   "canetinha-hidrografica-24-cores"
+  ],
+  "grupo": "cores",
+  "busca": "https://meli.la/25n3nmW"
+ },
+ {
+  "id": "guache",
+  "nome": "Tinta guache",
+  "unidade": "estojo",
+  "unidade_pl": "estojos",
+  "emoji": "🎨",
+  "termos": [
+   "tinta-guache-6-cores",
+   "tinta-guache-12-cores"
+  ],
+  "grupo": "arte",
+  "busca": "https://meli.la/1pJem3P"
+ },
+ {
+  "id": "aquarela",
+  "nome": "Aquarela",
+  "unidade": "estojo",
+  "unidade_pl": "estojos",
+  "emoji": "🎨",
+  "termos": [
+   "aquarela-escolar-12-cores"
+  ],
+  "grupo": "arte",
+  "busca": "https://meli.la/27TL2Ua"
+ },
+ {
+  "id": "tinta_pva",
+  "nome": "Tinta PVA/plástica",
+  "unidade": "pote",
+  "unidade_pl": "potes",
+  "emoji": "🎨",
+  "termos": [
+   "tinta-plastica-pva"
+  ],
+  "grupo": "arte",
+  "busca": "https://meli.la/1UsDwew"
+ },
+ {
+  "id": "pincel",
+  "nome": "Pincel",
+  "unidade": "pincel",
+  "unidade_pl": "pincéis",
+  "emoji": "🖌️",
+  "termos": [
+   "pincel-escolar-kit"
+  ],
+  "grupo": "arte",
+  "busca": "https://meli.la/2mPPAL1"
+ },
+ {
+  "id": "massinha",
+  "nome": "Massinha de modelar",
+  "unidade": "caixa",
+  "unidade_pl": "caixas",
+  "emoji": "🟢",
+  "termos": [
+   "massinha-de-modelar-12-cores",
+   "pote-de-massinha-500g"
+  ],
+  "grupo": "arte",
+  "busca": "https://meli.la/2kmREkh"
+ },
+ {
+  "id": "cola_branca",
+  "nome": "Cola branca",
+  "unidade": "tubo",
+  "unidade_pl": "tubos",
+  "emoji": "🧴",
+  "termos": [
+   "cola-branca-escolar-90g",
+   "cola-branca-escolar-40g"
+  ],
+  "grupo": "cola",
+  "busca": "https://meli.la/2avAxnH"
+ },
+ {
+  "id": "cola_bastao",
+  "nome": "Cola bastão",
+  "unidade": "tubo",
+  "unidade_pl": "tubos",
+  "emoji": "🧴",
+  "termos": [
+   "cola-bastao-escolar"
+  ],
+  "grupo": "cola",
+  "busca": "https://meli.la/26cH7W4"
+ },
+ {
+  "id": "cola_glitter",
+  "nome": "Cola glitter",
+  "unidade": "tubo",
+  "unidade_pl": "tubos",
+  "emoji": "✨",
+  "termos": [
+   "cola-glitter-escolar"
+  ],
+  "grupo": "cola",
+  "busca": "https://meli.la/2tLiDpg"
+ },
+ {
+  "id": "cola_colorida",
+  "nome": "Cola colorida",
+  "unidade": "tubo",
+  "unidade_pl": "tubos",
+  "emoji": "🧴",
+  "termos": [
+   "cola-colorida-escolar"
+  ],
+  "grupo": "cola",
+  "busca": "https://meli.la/2VHuQkD"
+ },
+ {
+  "id": "cola_isopor",
+  "nome": "Cola de isopor",
+  "unidade": "tubo",
+  "unidade_pl": "tubos",
+  "emoji": "🧴",
+  "termos": [
+   "cola-isopor"
+  ],
+  "grupo": "cola",
+  "busca": "https://meli.la/1yi5zNj"
+ },
+ {
+  "id": "tesoura",
+  "nome": "Tesoura sem ponta",
+  "unidade": "tesoura",
+  "unidade_pl": "tesouras",
+  "emoji": "✂️",
+  "termos": [
+   "tesoura-escolar-sem-ponta"
+  ],
+  "grupo": "corte",
+  "busca": "https://meli.la/1HRDAU6"
+ },
+ {
+  "id": "regua",
+  "nome": "Régua",
+  "unidade": "régua",
+  "unidade_pl": "réguas",
+  "emoji": "📏",
+  "termos": [
+   "regua-30cm-escolar",
+   "regua-15cm-escolar"
+  ],
+  "grupo": "geometria",
+  "busca": "https://meli.la/2tnxzDD"
+ },
+ {
+  "id": "geometria",
+  "nome": "Kit esquadro e transferidor",
+  "unidade": "kit",
+  "unidade_pl": "kits",
+  "emoji": "📐",
+  "termos": [
+   "kit-geometria-esquadro-transferidor-regua"
+  ],
+  "grupo": "geometria",
+  "busca": "https://meli.la/2NDTMa8"
+ },
+ {
+  "id": "compasso",
+  "nome": "Compasso",
+  "unidade": "compasso",
+  "unidade_pl": "compassos",
+  "emoji": "📐",
+  "termos": [
+   "compasso-escolar"
+  ],
+  "grupo": "geometria",
+  "busca": "https://meli.la/1bsbR21"
+ },
+ {
+  "id": "calculadora",
+  "nome": "Calculadora",
+  "unidade": "calculadora",
+  "unidade_pl": "calculadoras",
+  "emoji": "🧮",
+  "termos": [
+   "calculadora-escolar"
+  ],
+  "grupo": "geometria",
+  "busca": "https://meli.la/1C9YzdY"
+ },
+ {
+  "id": "caderno_brochura",
+  "nome": "Caderno brochura",
+  "unidade": "caderno",
+  "unidade_pl": "cadernos",
+  "emoji": "📒",
+  "termos": [
+   "caderno-brochura-96-folhas",
+   "caderno-brochura-48-folhas",
+   "caderno-brochurao-96-folhas-capa-dura"
+  ],
+  "grupo": "cadernos",
+  "busca": "https://meli.la/29SioTb"
+ },
+ {
+  "id": "caderno_universitario",
+  "nome": "Caderno universitário",
+  "unidade": "caderno",
+  "unidade_pl": "cadernos",
+  "emoji": "📓",
+  "termos": [
+   "caderno-universitario-10-materias",
+   "caderno-universitario-1-materia-96-folhas"
+  ],
+  "grupo": "cadernos",
+  "busca": "https://meli.la/2ipLxgp"
+ },
+ {
+  "id": "caderno_desenho",
+  "nome": "Caderno de desenho",
+  "unidade": "caderno",
+  "unidade_pl": "cadernos",
+  "emoji": "📔",
+  "termos": [
+   "caderno-de-desenho-96-folhas",
+   "caderno-de-desenho-a4-espiral"
+  ],
+  "grupo": "cadernos",
+  "busca": "https://meli.la/2vcbRzZ"
+ },
+ {
+  "id": "caderno_caligrafia",
+  "nome": "Caderno de caligrafia",
+  "unidade": "caderno",
+  "unidade_pl": "cadernos",
+  "emoji": "📗",
+  "termos": [
+   "caderno-de-caligrafia"
+  ],
+  "grupo": "cadernos",
+  "busca": "https://meli.la/1YBCpDT"
+ },
+ {
+  "id": "caderno_quadriculado",
+  "nome": "Caderno quadriculado",
+  "unidade": "caderno",
+  "unidade_pl": "cadernos",
+  "emoji": "📘",
+  "termos": [
+   "caderno-quadriculado-1x1"
+  ],
+  "grupo": "cadernos",
+  "busca": "https://meli.la/1PBCkn4"
+ },
+ {
+  "id": "caderno_musica",
+  "nome": "Caderno de música",
+  "unidade": "caderno",
+  "unidade_pl": "cadernos",
+  "emoji": "🎵",
+  "termos": [
+   "caderno-de-musica"
+  ],
+  "grupo": "cadernos",
+  "busca": "https://meli.la/1ca71yd"
+ },
+ {
+  "id": "sulfite",
+  "nome": "Papel sulfite A4",
+  "unidade": "folha",
+  "unidade_pl": "folhas",
+  "emoji": "📄",
+  "termos": [
+   "papel-sulfite-a4-500-folhas",
+   "papel-sulfite-a4-100-folhas"
+  ],
+  "grupo": "papeis",
+  "busca": "https://meli.la/1fckvJ6"
+ },
+ {
+  "id": "sulfite_a3",
+  "nome": "Papel sulfite A3",
+  "unidade": "folha",
+  "unidade_pl": "folhas",
+  "emoji": "📄",
+  "termos": [
+   "papel-sulfite-a3"
+  ],
+  "grupo": "papeis",
+  "busca": "https://meli.la/1y6Yoy9"
+ },
+ {
+  "id": "color_set",
+  "nome": "Papel color set / colorido",
+  "unidade": "folha",
+  "unidade_pl": "folhas",
+  "emoji": "🟥",
+  "termos": [
+   "papel-color-set-a4",
+   "bloco-criativo-colorido-a4"
+  ],
+  "grupo": "papeis",
+  "busca": "https://meli.la/17vK2oM"
+ },
+ {
+  "id": "crepom",
+  "nome": "Papel crepom",
+  "unidade": "folha",
+  "unidade_pl": "folhas",
+  "emoji": "🎀",
+  "termos": [
+   "papel-crepom-kit"
+  ],
+  "grupo": "papeis",
+  "busca": "https://meli.la/16dtUKN"
+ },
+ {
+  "id": "cartolina",
+  "nome": "Cartolina",
+  "unidade": "folha",
+  "unidade_pl": "folhas",
+  "emoji": "🟨",
+  "termos": [
+   "cartolina-kit"
+  ],
+  "grupo": "papeis",
+  "busca": "https://meli.la/1stdbei"
+ },
+ {
+  "id": "camurca",
+  "nome": "Papel camurça",
+  "unidade": "folha",
+  "unidade_pl": "folhas",
+  "emoji": "🟫",
+  "termos": [
+   "papel-camurca-kit"
+  ],
+  "grupo": "papeis",
+  "busca": "https://meli.la/2LGYf3o"
+ },
+ {
+  "id": "kraft",
+  "nome": "Papel kraft",
+  "unidade": "rolo",
+  "unidade_pl": "rolos",
+  "emoji": "📜",
+  "termos": [
+   "papel-kraft-rolo"
+  ],
+  "grupo": "papeis",
+  "busca": "https://meli.la/2di3fEw"
+ },
+ {
+  "id": "almaco",
+  "nome": "Folha de almaço",
+  "unidade": "folha",
+  "unidade_pl": "folhas",
+  "emoji": "📃",
+  "termos": [
+   "folha-de-almaco-pautada-pacote"
+  ],
+  "grupo": "papeis",
+  "busca": "https://meli.la/1BbNKnQ"
+ },
+ {
+  "id": "eva",
+  "nome": "EVA",
+  "unidade": "folha",
+  "unidade_pl": "folhas",
+  "emoji": "🟪",
+  "termos": [
+   "eva-folhas-kit-cores"
+  ],
+  "grupo": "papeis",
+  "busca": "https://meli.la/1amSfE8"
+ },
+ {
+  "id": "eva_glitter",
+  "nome": "EVA com glitter",
+  "unidade": "folha",
+  "unidade_pl": "folhas",
+  "emoji": "✨",
+  "termos": [
+   "eva-glitter-folhas"
+  ],
+  "grupo": "papeis",
+  "busca": "https://meli.la/2yfNYdE"
+ },
+ {
+  "id": "tnt",
+  "nome": "TNT",
+  "unidade": "metro",
+  "unidade_pl": "metros",
+  "emoji": "🧵",
+  "termos": [
+   "tnt-metro"
+  ],
+  "grupo": "papeis",
+  "busca": "https://meli.la/2uMXmC6"
+ },
+ {
+  "id": "pasta_elastico",
+  "nome": "Pasta com elástico",
+  "unidade": "pasta",
+  "unidade_pl": "pastas",
+  "emoji": "📁",
+  "termos": [
+   "pasta-plastica-com-elastico-oficio"
+  ],
+  "grupo": "organizacao",
+  "busca": "https://meli.la/1yvgXb5"
+ },
+ {
+  "id": "pasta_catalogo",
+  "nome": "Pasta catálogo",
+  "unidade": "pasta",
+  "unidade_pl": "pastas",
+  "emoji": "📁",
+  "termos": [
+   "pasta-catalogo-50-plasticos"
+  ],
+  "grupo": "organizacao",
+  "busca": "https://meli.la/1bN6ezx"
+ },
+ {
+  "id": "envelope",
+  "nome": "Envelope plástico",
+  "unidade": "envelope",
+  "unidade_pl": "envelopes",
+  "emoji": "✉️",
+  "termos": [
+   "envelope-plastico-com-botao"
+  ],
+  "grupo": "organizacao",
+  "busca": "https://meli.la/1Q8EhEg"
+ },
+ {
+  "id": "fita_durex",
+  "nome": "Fita adesiva (durex)",
+  "unidade": "rolo",
+  "unidade_pl": "rolos",
+  "emoji": "🩹",
+  "termos": [
+   "fita-adesiva-transparente-escolar"
+  ],
+  "grupo": "organizacao",
+  "busca": "https://meli.la/1HVc9pr"
+ },
+ {
+  "id": "fita_crepe",
+  "nome": "Fita crepe",
+  "unidade": "rolo",
+  "unidade_pl": "rolos",
+  "emoji": "🩹",
+  "termos": [
+   "fita-crepe"
+  ],
+  "grupo": "organizacao",
+  "busca": "https://meli.la/2CRJ6Tu"
+ },
+ {
+  "id": "fita_colorida",
+  "nome": "Fita adesiva colorida",
+  "unidade": "rolo",
+  "unidade_pl": "rolos",
+  "emoji": "🌈",
+  "termos": [
+   "fita-adesiva-colorida"
+  ],
+  "grupo": "organizacao",
+  "busca": "https://meli.la/2Sk1juk"
+ },
+ {
+  "id": "post_it",
+  "nome": "Bloco adesivo (post-it)",
+  "unidade": "bloco",
+  "unidade_pl": "blocos",
+  "emoji": "🗒️",
+  "termos": [
+   "bloco-adesivo-post-it"
+  ],
+  "grupo": "organizacao",
+  "busca": "https://meli.la/2cBYQ1L"
+ },
+ {
+  "id": "clips",
+  "nome": "Clipes",
+  "unidade": "caixa",
+  "unidade_pl": "caixas",
+  "emoji": "📎",
+  "termos": [
+   "clips-colorido"
+  ],
+  "grupo": "organizacao",
+  "busca": "https://meli.la/1eFNryQ"
+ },
+ {
+  "id": "grampeador",
+  "nome": "Grampeador",
+  "unidade": "grampeador",
+  "unidade_pl": "grampeadores",
+  "emoji": "📎",
+  "termos": [
+   "grampeador-escolar"
+  ],
+  "grupo": "organizacao",
+  "busca": "https://meli.la/1cJDrkN"
+ },
+ {
+  "id": "etiqueta",
+  "nome": "Etiqueta de nome",
+  "unidade": "kit",
+  "unidade_pl": "kits",
+  "emoji": "🏷️",
+  "termos": [
+   "etiqueta-escolar-nome"
+  ],
+  "grupo": "organizacao",
+  "busca": "https://meli.la/2erf6Lm"
+ },
+ {
+  "id": "encapar",
+  "nome": "Plástico pra encapar",
+  "unidade": "rolo",
+  "unidade_pl": "rolos",
+  "emoji": "📦",
+  "termos": [
+   "encapar-caderno-plastico-transparente"
+  ],
+  "grupo": "organizacao",
+  "busca": "https://meli.la/21TQp5T"
+ },
+ {
+  "id": "caixa_org",
+  "nome": "Caixa organizadora",
+  "unidade": "caixa",
+  "unidade_pl": "caixas",
+  "emoji": "🗃️",
+  "termos": [
+   "caixa-organizadora-plastica-escolar"
+  ],
+  "grupo": "organizacao",
+  "busca": "https://meli.la/149hovP"
+ },
+ {
+  "id": "estojo",
+  "nome": "Estojo",
+  "unidade": "estojo",
+  "unidade_pl": "estojos",
+  "emoji": "👝",
+  "termos": [
+   "estojo-escolar"
+  ],
+  "grupo": "mochila",
+  "busca": "https://meli.la/1aUJ2Zf"
+ },
+ {
+  "id": "mochila",
+  "nome": "Mochila",
+  "unidade": "mochila",
+  "unidade_pl": "mochilas",
+  "emoji": "🎒",
+  "termos": [
+   "mochila-escolar-infantil",
+   "mochila-escolar-rodinha"
+  ],
+  "grupo": "mochila",
+  "busca": "https://meli.la/2ZvrmFh"
+ },
+ {
+  "id": "lancheira",
+  "nome": "Lancheira",
+  "unidade": "lancheira",
+  "unidade_pl": "lancheiras",
+  "emoji": "🍱",
+  "termos": [
+   "lancheira-termica-infantil"
+  ],
+  "grupo": "mochila",
+  "busca": "https://meli.la/2cx7bHy"
+ },
+ {
+  "id": "garrafa",
+  "nome": "Garrafinha de água",
+  "unidade": "garrafa",
+  "unidade_pl": "garrafas",
+  "emoji": "🥤",
+  "termos": [
+   "garrafa-squeeze-infantil"
+  ],
+  "grupo": "mochila",
+  "busca": "https://meli.la/17DooZ8"
+ },
+ {
+  "id": "copo",
+  "nome": "Copo plástico",
+  "unidade": "copo",
+  "unidade_pl": "copos",
+  "emoji": "🥛",
+  "termos": [
+   "copo-plastico-escolar"
+  ],
+  "grupo": "mochila",
+  "busca": "https://meli.la/2QYKaRX"
+ },
+ {
+  "id": "agenda",
+  "nome": "Agenda escolar",
+  "unidade": "agenda",
+  "unidade_pl": "agendas",
+  "emoji": "📅",
+  "termos": [
+   "agenda-escolar-2027"
+  ],
+  "grupo": "mochila",
+  "busca": "https://meli.la/1QWiAb1"
+ },
+ {
+  "id": "avental",
+  "nome": "Avental de pintura",
+  "unidade": "avental",
+  "unidade_pl": "aventais",
+  "emoji": "🥼",
+  "termos": [
+   "avental-de-pintura-infantil"
+  ],
+  "grupo": "arte",
+  "busca": "https://meli.la/2sMEvEB"
+ },
+ {
+  "id": "palito",
+  "nome": "Palito de picolé",
+  "unidade": "palito",
+  "unidade_pl": "palitos",
+  "emoji": "🍡",
+  "termos": [
+   "palito-de-picole-colorido"
+  ],
+  "grupo": "arte",
+  "busca": "https://meli.la/1PRjLnG"
+ },
+ {
+  "id": "lantejoula",
+  "nome": "Lantejoula",
+  "unidade": "pacote",
+  "unidade_pl": "pacotes",
+  "emoji": "✨",
+  "termos": [
+   "lantejoula"
+  ],
+  "grupo": "arte",
+  "busca": "https://meli.la/1jLPE7Y"
+ },
+ {
+  "id": "glitter",
+  "nome": "Glitter",
+  "unidade": "pote",
+  "unidade_pl": "potes",
+  "emoji": "✨",
+  "termos": [
+   "glitter-pote-escolar"
+  ],
+  "grupo": "arte",
+  "busca": "https://meli.la/1FjyrZe"
+ },
+ {
+  "id": "olhinho",
+  "nome": "Olhinho móvel",
+  "unidade": "pacote",
+  "unidade_pl": "pacotes",
+  "emoji": "👀",
+  "termos": [
+   "olhinho-movel-artesanato"
+  ],
+  "grupo": "arte",
+  "busca": "https://meli.la/1MdvB3H"
+ },
+ {
+  "id": "barbante",
+  "nome": "Barbante",
+  "unidade": "rolo",
+  "unidade_pl": "rolos",
+  "emoji": "🧶",
+  "termos": [
+   "barbante-colorido"
+  ],
+  "grupo": "arte",
+  "busca": "https://meli.la/1ufbjgx"
+ },
+ {
+  "id": "prendedor",
+  "nome": "Prendedor de madeira",
+  "unidade": "prendedor",
+  "unidade_pl": "prendedores",
+  "emoji": "🪵",
+  "termos": [
+   "prendedor-de-madeira"
+  ],
+  "grupo": "arte",
+  "busca": "https://meli.la/25JTxdF"
+ },
+ {
+  "id": "dicionario",
+  "nome": "Dicionário",
+  "unidade": "dicionário",
+  "unidade_pl": "dicionários",
+  "emoji": "📕",
+  "termos": [
+   "dicionario-escolar-portugues"
+  ],
+  "grupo": "livros",
+  "busca": "https://meli.la/2f3vJLh"
+ },
+ {
+  "id": "permanente",
+  "nome": "Caneta permanente",
+  "unidade": "caneta",
+  "unidade_pl": "canetas",
+  "emoji": "🖊️",
+  "termos": [
+   "caneta-marcador-permanente"
+  ],
+  "grupo": "escrita",
+  "busca": "https://meli.la/1vSQjYJ"
+ },
+ {
+  "id": "pincel_atomico",
+  "nome": "Pincel atômico",
+  "unidade": "pincel",
+  "unidade_pl": "pincéis",
+  "emoji": "🖊️",
+  "termos": [
+   "pincel-atomico"
+  ],
+  "grupo": "escrita",
+  "busca": "https://meli.la/1pYxu16"
+ },
+ {
+  "id": "apagador",
+  "nome": "Apagador de quadro",
+  "unidade": "apagador",
+  "unidade_pl": "apagadores",
+  "emoji": "🧽",
+  "termos": [
+   "apagador-quadro-branco"
+  ],
+  "grupo": "organizacao",
+  "busca": "https://meli.la/32Tyc96"
+ }
+]

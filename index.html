@@ -1,0 +1,764 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Material Escolar do Rafa: tire foto da lista e veja o orçamento mais barato</title>
+<meta name="description" content="Mande a foto da lista de material escolar: a gente lê item por item e monta o orçamento mais barato no Mercado Livre, com o link de cada produto.">
+<link rel="canonical" href="https://escolar.ofertadorafa.com.br/">
+<meta property="og:title" content="Material Escolar do Rafa: tire foto da lista e veja o orçamento mais barato">
+<meta property="og:description" content="Mande a foto da lista de material escolar: a gente lê item por item e monta o orçamento mais barato no Mercado Livre, com o link de cada produto.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://escolar.ofertadorafa.com.br/">
+<meta property="og:site_name" content="Material Escolar do Rafa">
+<meta property="og:image" content="https://escolar.ofertadorafa.com.br/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1D3A8A">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Caveat:wght@600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=1">
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1896450861799386');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1896450861799386&ev=PageView&noscript=1"></noscript>
+</head>
+<body>
+<header class="hdr"><div class="wrap">
+  <a class="logo" href="/" aria-label="Material Escolar do Rafa"><svg aria-hidden="true" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1D3A8A"/><g transform="rotate(-40 32 32)"><rect x="12" y="25" width="34" height="14" rx="2" fill="#F6C343"/><rect x="12" y="25" width="34" height="4.6" fill="#FFD966"/><rect x="6" y="25" width="8" height="14" rx="2" fill="#E86A8F"/><rect x="12" y="25" width="3" height="14" fill="#C9CED8"/><path d="M46 25 L57 32 L46 39 Z" fill="#F3D9B1"/><path d="M53.5 29.8 L57 32 L53.5 34.2 Z" fill="#16213E"/></g></svg>
+<span>Material Escolar <i>do Rafa</i></span></a>
+  <nav class="menu" aria-label="Menu"><a href="#enviar-lista">Mandar lista</a><a href="#catalogo">Produtos</a><a class="hide-sm" href="#duvidas">Dúvidas</a></nav>
+</div></header>
+<main>
+<section class="hero" id="enviar-lista"><div class="wrap">
+  <div class="hero-tx">
+    <p class="eyebrow">Volta às aulas 2027 · Mercado Livre</p>
+    <h1>Tira uma foto da lista de material. <span class="marca">A gente acha tudo mais barato.</span></h1>
+    <p class="sub">Lemos item por item, procuramos o menor preço com boa avaliação e devolvemos o orçamento completo, com o link de cada produto.</p>
+    <ol class="passos"><li><b>1</b> Foto da lista</li><li><b>2</b> A gente lê</li><li><b>3</b> Orçamento com links</li></ol>
+  </div>
+  <div class="envio">
+    <form id="form-lista" novalidate>
+      <label class="campo"><span>Nome da criança <small>(opcional)</small></span>
+        <input id="nome" name="nome" type="text" maxlength="30" autocomplete="off" placeholder="Ex.: Noah"></label>
+      <label class="drop" id="drop">
+        <input id="foto" type="file" accept="image/*,application/pdf" multiple>
+        <span class="drop-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></span>
+        <span class="drop-tx"><b>Tirar foto da lista</b><small>ou escolher foto/PDF · até 4 páginas</small></span>
+      </label>
+      <div class="previas" id="previas"></div>
+      <button type="button" class="link" id="abre-texto">Prefiro colar o texto da lista</button>
+      <div id="texto-wrap" hidden><textarea id="texto" rows="6" maxlength="6000" placeholder="Cole aqui a lista (do WhatsApp, e-mail, site da escola…)"></textarea></div>
+      <button class="btn grande" id="enviar" type="submit">Montar meu orçamento</button>
+      <p class="msg" id="msg" role="alert"></p>
+      <p class="nota">Leva uns 20 segundos. A foto não fica guardada.</p>
+    </form>
+  </div>
+</div></section>
+<p class="aviso-comp" id="aviso-comp" hidden><b></b> Quer a da sua escola? <a href="#enviar-lista">Mande a foto aqui</a>.</p>
+<section class="resultado wrap" id="resultado" hidden aria-live="polite"></section>
+
+<section class="sec alt" id="catalogo"><div class="wrap">
+  <div class="sec-title"><h2>Os campeões de cada item</h2><p>O mais barato com boa nota em cada categoria do nosso catálogo.</p></div>
+  <h3 class="cat-title" id="escrita">Escrita</h3>
+<div class="grid">
+<article class="card">
+  <a class="foto" href="https://meli.la/17jb9ZC" target="_blank" rel="noopener sponsored" data-ml="kit-72-lapis-grafite-hb-com-borracha-leo-leo" data-origem="catalogo-foto"><img src="/img/868926-MLA112945099434_072026.webp" alt="Kit 72 Lápis Grafite HB com Borracha Leo &amp; Leo" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">✏️ Lápis preto (grafite)</p>
+    <h3><a class="" href="https://meli.la/17jb9ZC" target="_blank" rel="noopener sponsored" data-ml="kit-72-lapis-grafite-hb-com-borracha-leo-leo" data-origem="catalogo-nome">Kit 72 Lápis Grafite HB com Borracha Leo &amp; Leo</a></h3>
+    <p class="aval">★ <b>4,9</b> · +10mil vendidos</p>
+    <div class="linha"><p class="preco">R$ 30,47</p><a class="ml" href="https://meli.la/17jb9ZC" target="_blank" rel="noopener sponsored" data-ml="kit-72-lapis-grafite-hb-com-borracha-leo-leo" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2otxxzZ" target="_blank" rel="noopener sponsored" data-ml="borracha-branca-escolar-kit-40-unidades" data-origem="catalogo-foto"><img src="/img/960623-MLA100065675393_122025.webp" alt="Borracha Branca Escolar Kit 40 Unidades" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🧽 Borracha</p>
+    <h3><a class="" href="https://meli.la/2otxxzZ" target="_blank" rel="noopener sponsored" data-ml="borracha-branca-escolar-kit-40-unidades" data-origem="catalogo-nome">Borracha Branca Escolar Kit 40 Unidades</a></h3>
+    <p class="aval">★ <b>4,8</b> · +5mil vendidos</p>
+    <div class="linha"><p class="preco">R$ 23,18</p><a class="ml" href="https://meli.la/2otxxzZ" target="_blank" rel="noopener sponsored" data-ml="borracha-branca-escolar-kit-40-unidades" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/18z6egi" target="_blank" rel="noopener sponsored" data-ml="apontador-escolar-masterprint-48-unidades-cores-so" data-origem="catalogo-foto"><img src="/img/679258-MLA86754870160_072025.webp" alt="Apontador Escolar Masterprint 48 Unidades Cores Sortidas" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🔪 Apontador</p>
+    <h3><a class="" href="https://meli.la/18z6egi" target="_blank" rel="noopener sponsored" data-ml="apontador-escolar-masterprint-48-unidades-cores-so" data-origem="catalogo-nome">Apontador Escolar Masterprint 48 Unidades Cores Sortidas</a></h3>
+    <p class="aval">★ <b>4,8</b> · +500 vendidos</p>
+    <div class="linha"><p class="preco">R$ 19,90</p><a class="ml" href="https://meli.la/18z6egi" target="_blank" rel="noopener sponsored" data-ml="apontador-escolar-masterprint-48-unidades-cores-so" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/1m9kRC6" target="_blank" rel="noopener sponsored" data-ml="caneta-bic-cristal-media-azul-caixa-50" data-origem="catalogo-foto"><img src="/img/995607-MLB115354228921_072026.webp" alt="Caneta Bic Cristal Média Azul Caixa 50" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🖊️ Caneta esferográfica</p>
+    <h3><a class="" href="https://meli.la/1m9kRC6" target="_blank" rel="noopener sponsored" data-ml="caneta-bic-cristal-media-azul-caixa-50" data-origem="catalogo-nome">Caneta Bic Cristal Média Azul Caixa 50</a></h3>
+    <p class="aval">★ <b>4,9</b> · +10mil vendidos</p>
+    <div class="linha"><p class="preco">R$ 38,90</p><a class="ml" href="https://meli.la/1m9kRC6" target="_blank" rel="noopener sponsored" data-ml="caneta-bic-cristal-media-azul-caixa-50" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/1J4YEcG" target="_blank" rel="noopener sponsored" data-ml="kit-36-canetas-gel-neon-metalica-e-pastel-1-mm" data-origem="catalogo-foto"><img src="/img/661903-MLA100084618819_122025.webp" alt="Kit 36 Canetas Gel Neon, Metálica e Pastel 1 mm" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🖍️ Caneta gel/colorida</p>
+    <h3><a class="" href="https://meli.la/1J4YEcG" target="_blank" rel="noopener sponsored" data-ml="kit-36-canetas-gel-neon-metalica-e-pastel-1-mm" data-origem="catalogo-nome">Kit 36 Canetas Gel Neon, Metálica e Pastel 1 mm</a></h3>
+    <p class="aval">★ <b>4,9</b> · +1000 vendidos</p>
+    <div class="linha"><p class="preco">R$ 27,99</p><a class="ml" href="https://meli.la/1J4YEcG" target="_blank" rel="noopener sponsored" data-ml="kit-36-canetas-gel-neon-metalica-e-pastel-1-mm" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2h77Su9" target="_blank" rel="noopener sponsored" data-ml="marca-texto-amarelo-masterprint-caixa-12" data-origem="catalogo-foto"><img src="/img/949951-MLA99597011950_122025.webp" alt="Marca-Texto Amarelo Masterprint Caixa 12" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🖍️ Marca-texto</p>
+    <h3><a class="" href="https://meli.la/2h77Su9" target="_blank" rel="noopener sponsored" data-ml="marca-texto-amarelo-masterprint-caixa-12" data-origem="catalogo-nome">Marca-Texto Amarelo Masterprint Caixa 12</a></h3>
+    <p class="aval">★ <b>4,9</b> · +10mil vendidos</p>
+    <div class="linha"><p class="preco">R$ 19,30</p><a class="ml" href="https://meli.la/2h77Su9" target="_blank" rel="noopener sponsored" data-ml="marca-texto-amarelo-masterprint-caixa-12" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2kJz5Ff" target="_blank" rel="noopener sponsored" data-ml="fita-corretiva-branquinho-5-mm-x-4-m-blister-12" data-origem="catalogo-foto"><img src="/img/878082-MLB104567148551_012026.webp" alt="Fita Corretiva Branquinho 5 mm x 4 m Blister 12" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">⬜ Corretivo</p>
+    <h3><a class="" href="https://meli.la/2kJz5Ff" target="_blank" rel="noopener sponsored" data-ml="fita-corretiva-branquinho-5-mm-x-4-m-blister-12" data-origem="catalogo-nome">Fita Corretiva Branquinho 5 mm x 4 m Blister 12</a></h3>
+    <p class="aval">★ <b>4,9</b> · +1000 vendidos</p>
+    <div class="linha"><p class="preco">R$ 30,25</p><a class="ml" href="https://meli.la/2kJz5Ff" target="_blank" rel="noopener sponsored" data-ml="fita-corretiva-branquinho-5-mm-x-4-m-blister-12" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2P1Rzfo" target="_blank" rel="noopener sponsored" data-ml="3-marcadores-permanentes-pretos-ponta-dupla" data-origem="catalogo-foto"><img src="/img/783876-MLB109738254003_032026.webp" alt="3 Marcadores Permanentes Pretos Ponta Dupla" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🖊️ Caneta permanente</p>
+    <h3><a class="" href="https://meli.la/2P1Rzfo" target="_blank" rel="noopener sponsored" data-ml="3-marcadores-permanentes-pretos-ponta-dupla" data-origem="catalogo-nome">3 Marcadores Permanentes Pretos Ponta Dupla</a></h3>
+    <p class="aval">★ <b>4,9</b> · +1000 vendidos</p>
+    <div class="linha"><p class="preco">R$ 19,99</p><a class="ml" href="https://meli.la/2P1Rzfo" target="_blank" rel="noopener sponsored" data-ml="3-marcadores-permanentes-pretos-ponta-dupla" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/12xepCe" target="_blank" rel="noopener sponsored" data-ml="kit-3-pinceis-atomicos-pilot-1100-p" data-origem="catalogo-foto"><img src="/img/623957-MLB119662244179_102026.webp" alt="Kit 3 Pincéis Atômicos Pilot 1100-P" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🖊️ Pincel atômico</p>
+    <h3><a class="" href="https://meli.la/12xepCe" target="_blank" rel="noopener sponsored" data-ml="kit-3-pinceis-atomicos-pilot-1100-p" data-origem="catalogo-nome">Kit 3 Pincéis Atômicos Pilot 1100-P</a></h3>
+    <p class="aval">★ <b>5,0</b> · +500 vendidos</p>
+    <div class="linha"><p class="preco">R$ 27,35</p><a class="ml" href="https://meli.la/12xepCe" target="_blank" rel="noopener sponsored" data-ml="kit-3-pinceis-atomicos-pilot-1100-p" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+</div>
+<h3 class="cat-title" id="cores">Pra colorir</h3>
+<div class="grid">
+<article class="card">
+  <a class="foto" href="https://meli.la/2useg9N" target="_blank" rel="noopener sponsored" data-ml="kit-2-caixas-lapis-de-cor-12-cores-leo-leo" data-origem="catalogo-foto"><img src="/img/724289-MLB118000003447_092026.webp" alt="Kit 2 Caixas Lápis de Cor 12 Cores Leo &amp; Leo" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🌈 Lápis de cor</p>
+    <h3><a class="" href="https://meli.la/2useg9N" target="_blank" rel="noopener sponsored" data-ml="kit-2-caixas-lapis-de-cor-12-cores-leo-leo" data-origem="catalogo-nome">Kit 2 Caixas Lápis de Cor 12 Cores Leo &amp; Leo</a></h3>
+    <p class="aval">★ <b>4,7</b> · +100 vendidos</p>
+    <div class="linha"><p class="preco">R$ 19,90</p><a class="ml" href="https://meli.la/2useg9N" target="_blank" rel="noopener sponsored" data-ml="kit-2-caixas-lapis-de-cor-12-cores-leo-leo" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/1VyPT2X" target="_blank" rel="noopener sponsored" data-ml="gizao-de-cera-jumbo-12-cores-faber-castell" data-origem="catalogo-foto"><img src="/img/647323-MLA118378948742_102026.webp" alt="Gizão de Cera Jumbo 12 Cores Faber-Castell" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🖍️ Giz de cera</p>
+    <h3><a class="" href="https://meli.la/1VyPT2X" target="_blank" rel="noopener sponsored" data-ml="gizao-de-cera-jumbo-12-cores-faber-castell" data-origem="catalogo-nome">Gizão de Cera Jumbo 12 Cores Faber-Castell</a></h3>
+    <p class="aval">★ <b>4,6</b> · +10mil vendidos</p>
+    <div class="linha"><p class="preco">R$ 20,16</p><a class="ml" href="https://meli.la/1VyPT2X" target="_blank" rel="noopener sponsored" data-ml="gizao-de-cera-jumbo-12-cores-faber-castell" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2NDuPSx" target="_blank" rel="noopener sponsored" data-ml="canetinha-hidrocor-leo-leo-24-cores" data-origem="catalogo-foto"><img src="/img/922768-MLA99602860282_122025.webp" alt="Canetinha Hidrocor Leo &amp; Leo 24 Cores" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🖌️ Canetinha hidrográfica</p>
+    <h3><a class="" href="https://meli.la/2NDuPSx" target="_blank" rel="noopener sponsored" data-ml="canetinha-hidrocor-leo-leo-24-cores" data-origem="catalogo-nome">Canetinha Hidrocor Leo &amp; Leo 24 Cores</a></h3>
+    <p class="aval">★ <b>4,7</b> · +10mil vendidos</p>
+    <div class="linha"><p class="preco">R$ 19,00</p><a class="ml" href="https://meli.la/2NDuPSx" target="_blank" rel="noopener sponsored" data-ml="canetinha-hidrocor-leo-leo-24-cores" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+</div>
+<h3 class="cat-title" id="cadernos">Cadernos</h3>
+<div class="grid">
+<article class="card">
+  <a class="foto" href="https://meli.la/2vAAbVN" target="_blank" rel="noopener sponsored" data-ml="caderno-brochura-pequeno-1-4-jandaia-48-folhas-kit" data-origem="catalogo-foto"><img src="/img/995589-MLB109627290314_042026.webp" alt="Caderno Brochura Pequeno 1/4 Jandaia 48 Folhas Kit 10" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">📒 Caderno brochura</p>
+    <h3><a class="" href="https://meli.la/2vAAbVN" target="_blank" rel="noopener sponsored" data-ml="caderno-brochura-pequeno-1-4-jandaia-48-folhas-kit" data-origem="catalogo-nome">Caderno Brochura Pequeno 1/4 Jandaia 48 Folhas Kit 10</a></h3>
+    <p class="aval">★ <b>5,0</b> · +500 vendidos</p>
+    <div class="linha"><p class="preco">R$ 54,90</p><a class="ml" href="https://meli.la/2vAAbVN" target="_blank" rel="noopener sponsored" data-ml="caderno-brochura-pequeno-1-4-jandaia-48-folhas-kit" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2Y3Xj85" target="_blank" rel="noopener sponsored" data-ml="kit-4-cadernos-universitarios-1-materia-96-folhas" data-origem="catalogo-foto"><img src="/img/638951-MLB104511834097_012026.webp" alt="Kit 4 Cadernos Universitários 1 Matéria 96 Folhas" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">📓 Caderno universitário</p>
+    <h3><a class="" href="https://meli.la/2Y3Xj85" target="_blank" rel="noopener sponsored" data-ml="kit-4-cadernos-universitarios-1-materia-96-folhas" data-origem="catalogo-nome">Kit 4 Cadernos Universitários 1 Matéria 96 Folhas</a></h3>
+    <p class="aval">★ <b>4,9</b> · +100 vendidos</p>
+    <div class="linha"><p class="preco">R$ 64,00</p><a class="ml" href="https://meli.la/2Y3Xj85" target="_blank" rel="noopener sponsored" data-ml="kit-4-cadernos-universitarios-1-materia-96-folhas" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/1UVRjfW" target="_blank" rel="noopener sponsored" data-ml="caderno-de-desenho-espiral-capa-dura-basic-art-96-" data-origem="catalogo-foto"><img src="/img/828688-MLA97520351504_112025.webp" alt="Caderno de Desenho Espiral Capa Dura Basic Art 96 Folhas Jandaia" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">📔 Caderno de desenho</p>
+    <h3><a class="" href="https://meli.la/1UVRjfW" target="_blank" rel="noopener sponsored" data-ml="caderno-de-desenho-espiral-capa-dura-basic-art-96-" data-origem="catalogo-nome">Caderno de Desenho Espiral Capa Dura Basic Art 96 Folhas Jandaia</a></h3>
+    <p class="aval">★ <b>4,8</b> · +500 vendidos</p>
+    <div class="linha"><p class="preco">R$ 20,50</p><a class="ml" href="https://meli.la/1UVRjfW" target="_blank" rel="noopener sponsored" data-ml="caderno-de-desenho-espiral-capa-dura-basic-art-96-" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/1UCTS4Y" target="_blank" rel="noopener sponsored" data-ml="caderno-de-caligrafia-capa-dura-stiff-96-folhas-ja" data-origem="catalogo-foto"><img src="/img/910288-MLA113791447538_072026.webp" alt="Caderno de Caligrafia Capa Dura Stiff 96 Folhas Jandaia" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">📗 Caderno de caligrafia</p>
+    <h3><a class="" href="https://meli.la/1UCTS4Y" target="_blank" rel="noopener sponsored" data-ml="caderno-de-caligrafia-capa-dura-stiff-96-folhas-ja" data-origem="catalogo-nome">Caderno de Caligrafia Capa Dura Stiff 96 Folhas Jandaia</a></h3>
+    <p class="aval">★ <b>4,8</b> · +1000 vendidos</p>
+    <div class="linha"><p class="preco">R$ 18,99</p><a class="ml" href="https://meli.la/1UCTS4Y" target="_blank" rel="noopener sponsored" data-ml="caderno-de-caligrafia-capa-dura-stiff-96-folhas-ja" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/134avm6" target="_blank" rel="noopener sponsored" data-ml="caderno-quadriculado-1x1-cm-universitario-96-folha" data-origem="catalogo-foto"><img src="/img/701476-MLB115960024133_082026.webp" alt="Caderno Quadriculado 1x1 cm Universitário 96 Folhas" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">📘 Caderno quadriculado</p>
+    <h3><a class="" href="https://meli.la/134avm6" target="_blank" rel="noopener sponsored" data-ml="caderno-quadriculado-1x1-cm-universitario-96-folha" data-origem="catalogo-nome">Caderno Quadriculado 1x1 cm Universitário 96 Folhas</a></h3>
+    <p class="aval">★ <b>4,8</b> · +50 vendidos</p>
+    <div class="linha"><p class="preco">R$ 29,00</p><a class="ml" href="https://meli.la/134avm6" target="_blank" rel="noopener sponsored" data-ml="caderno-quadriculado-1x1-cm-universitario-96-folha" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2Qt89QA" target="_blank" rel="noopener sponsored" data-ml="caderno-de-musica-credeal-50-folhas-espiral" data-origem="catalogo-foto"><img src="/img/600656-MLA119268251542_112026.webp" alt="Caderno de Música Credeal 50 Folhas Espiral" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🎵 Caderno de música</p>
+    <h3><a class="" href="https://meli.la/2Qt89QA" target="_blank" rel="noopener sponsored" data-ml="caderno-de-musica-credeal-50-folhas-espiral" data-origem="catalogo-nome">Caderno de Música Credeal 50 Folhas Espiral</a></h3>
+    <p class="aval">★ <b>4,8</b> · +1000 vendidos</p>
+    <div class="linha"><p class="preco">R$ 19,50</p><a class="ml" href="https://meli.la/2Qt89QA" target="_blank" rel="noopener sponsored" data-ml="caderno-de-musica-credeal-50-folhas-espiral" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+</div>
+<h3 class="cat-title" id="cola">Colas</h3>
+<div class="grid">
+<article class="card">
+  <a class="foto" href="https://meli.la/1LdGE8V" target="_blank" rel="noopener sponsored" data-ml="kit-12-colas-brancas-40-g-com-espatula" data-origem="catalogo-foto"><img src="/img/663747-MLA102761717744_122025.webp" alt="Kit 12 Colas Brancas 40 g com Espátula" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🧴 Cola branca</p>
+    <h3><a class="" href="https://meli.la/1LdGE8V" target="_blank" rel="noopener sponsored" data-ml="kit-12-colas-brancas-40-g-com-espatula" data-origem="catalogo-nome">Kit 12 Colas Brancas 40 g com Espátula</a></h3>
+    <p class="aval">★ <b>4,8</b> · +500 vendidos</p>
+    <div class="linha"><p class="preco">R$ 29,99</p><a class="ml" href="https://meli.la/1LdGE8V" target="_blank" rel="noopener sponsored" data-ml="kit-12-colas-brancas-40-g-com-espatula" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/1VhGaZQ" target="_blank" rel="noopener sponsored" data-ml="kit-12-colas-bastao-leo-leo-21-g" data-origem="catalogo-foto"><img src="/img/772074-MLA100077729243_122025.webp" alt="Kit 12 Colas Bastão Leo &amp; Leo 21 g" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🧴 Cola bastão</p>
+    <h3><a class="" href="https://meli.la/1VhGaZQ" target="_blank" rel="noopener sponsored" data-ml="kit-12-colas-bastao-leo-leo-21-g" data-origem="catalogo-nome">Kit 12 Colas Bastão Leo &amp; Leo 21 g</a></h3>
+    <p class="aval">★ <b>4,9</b> · +5mil vendidos</p>
+    <div class="linha"><p class="preco">R$ 19,03</p><a class="ml" href="https://meli.la/1VhGaZQ" target="_blank" rel="noopener sponsored" data-ml="kit-12-colas-bastao-leo-leo-21-g" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2oYkFNh" target="_blank" rel="noopener sponsored" data-ml="cola-glitter-leo-leo-6-cores" data-origem="catalogo-foto"><img src="/img/760788-MLA99843133907_112025.webp" alt="Cola Glitter Leo &amp; Leo 6 Cores" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">✨ Cola glitter</p>
+    <h3><a class="" href="https://meli.la/2oYkFNh" target="_blank" rel="noopener sponsored" data-ml="cola-glitter-leo-leo-6-cores" data-origem="catalogo-nome">Cola Glitter Leo &amp; Leo 6 Cores</a></h3>
+    <p class="aval">★ <b>4,8</b> · +1000 vendidos</p>
+    <div class="linha"><p class="preco">R$ 20,10</p><a class="ml" href="https://meli.la/2oYkFNh" target="_blank" rel="noopener sponsored" data-ml="cola-glitter-leo-leo-6-cores" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2o2PV9o" target="_blank" rel="noopener sponsored" data-ml="cola-colorida-acrilex-6-cores-23-g" data-origem="catalogo-foto"><img src="/img/850989-MLA99630210550_122025.webp" alt="Cola Colorida Acrilex 6 Cores 23 g" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🧴 Cola colorida</p>
+    <h3><a class="" href="https://meli.la/2o2PV9o" target="_blank" rel="noopener sponsored" data-ml="cola-colorida-acrilex-6-cores-23-g" data-origem="catalogo-nome">Cola Colorida Acrilex 6 Cores 23 g</a></h3>
+    <p class="aval">★ <b>4,9</b> · +5mil vendidos</p>
+    <div class="linha"><p class="preco">R$ 19,00</p><a class="ml" href="https://meli.la/2o2PV9o" target="_blank" rel="noopener sponsored" data-ml="cola-colorida-acrilex-6-cores-23-g" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/1UPhhiu" target="_blank" rel="noopener sponsored" data-ml="cola-de-isopor-construflex-400-g" data-origem="catalogo-foto"><img src="/img/674450-MLA112857370293_062026.webp" alt="Cola de Isopor Construflex 400 g" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🧴 Cola de isopor</p>
+    <h3><a class="" href="https://meli.la/1UPhhiu" target="_blank" rel="noopener sponsored" data-ml="cola-de-isopor-construflex-400-g" data-origem="catalogo-nome">Cola de Isopor Construflex 400 g</a></h3>
+    <p class="aval">★ <b>4,9</b> · +100 vendidos</p>
+    <div class="linha"><p class="preco">R$ 41,09</p><a class="ml" href="https://meli.la/1UPhhiu" target="_blank" rel="noopener sponsored" data-ml="cola-de-isopor-construflex-400-g" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+</div>
+<h3 class="cat-title" id="corte">Tesoura</h3>
+<div class="grid">
+<article class="card">
+  <a class="foto" href="https://meli.la/1uCzntR" target="_blank" rel="noopener sponsored" data-ml="kit-10-tesouras-sem-ponta-13-cm-inox" data-origem="catalogo-foto"><img src="/img/925271-MLB116881786134_092026.webp" alt="Kit 10 Tesouras Sem Ponta 13 cm Inox" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">✂️ Tesoura sem ponta</p>
+    <h3><a class="" href="https://meli.la/1uCzntR" target="_blank" rel="noopener sponsored" data-ml="kit-10-tesouras-sem-ponta-13-cm-inox" data-origem="catalogo-nome">Kit 10 Tesouras Sem Ponta 13 cm Inox</a></h3>
+    <p class="aval">★ <b>4,8</b> · +1000 vendidos</p>
+    <div class="linha"><p class="preco">R$ 26,47</p><a class="ml" href="https://meli.la/1uCzntR" target="_blank" rel="noopener sponsored" data-ml="kit-10-tesouras-sem-ponta-13-cm-inox" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+</div>
+<h3 class="cat-title" id="geometria">Régua e geometria</h3>
+<div class="grid">
+<article class="card">
+  <a class="foto" href="https://meli.la/1m9froa" target="_blank" rel="noopener sponsored" data-ml="kit-5-reguas-transparentes-30-cm-maxcril" data-origem="catalogo-foto"><img src="/img/662054-MLB103749002178_012026.webp" alt="Kit 5 Réguas Transparentes 30 cm Maxcril" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">📏 Régua</p>
+    <h3><a class="" href="https://meli.la/1m9froa" target="_blank" rel="noopener sponsored" data-ml="kit-5-reguas-transparentes-30-cm-maxcril" data-origem="catalogo-nome">Kit 5 Réguas Transparentes 30 cm Maxcril</a></h3>
+    <p class="aval">★ <b>4,9</b> · +100 vendidos</p>
+    <div class="linha"><p class="preco">R$ 26,00</p><a class="ml" href="https://meli.la/1m9froa" target="_blank" rel="noopener sponsored" data-ml="kit-5-reguas-transparentes-30-cm-maxcril" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2pFHQSq" target="_blank" rel="noopener sponsored" data-ml="kit-geometrico-4-pecas-regua-esquadros-e-transferi" data-origem="catalogo-foto"><img src="/img/782626-MLA81903638542_012025.webp" alt="Kit Geométrico 4 Peças: Régua, Esquadros e Transferidor" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">📐 Kit esquadro e transferidor</p>
+    <h3><a class="" href="https://meli.la/2pFHQSq" target="_blank" rel="noopener sponsored" data-ml="kit-geometrico-4-pecas-regua-esquadros-e-transferi" data-origem="catalogo-nome">Kit Geométrico 4 Peças: Régua, Esquadros e Transferidor</a></h3>
+    <p class="aval">★ <b>4,9</b> · +100 vendidos</p>
+    <div class="linha"><p class="preco">R$ 17,50</p><a class="ml" href="https://meli.la/2pFHQSq" target="_blank" rel="noopener sponsored" data-ml="kit-geometrico-4-pecas-regua-esquadros-e-transferi" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2t7jkEK" target="_blank" rel="noopener sponsored" data-ml="compasso-escolar-de-metal-leo-leo" data-origem="catalogo-foto"><img src="/img/757397-MLA99577184806_122025.webp" alt="Compasso Escolar de Metal Leo &amp; Leo" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">📐 Compasso</p>
+    <h3><a class="" href="https://meli.la/2t7jkEK" target="_blank" rel="noopener sponsored" data-ml="compasso-escolar-de-metal-leo-leo" data-origem="catalogo-nome">Compasso Escolar de Metal Leo &amp; Leo</a></h3>
+    <p class="aval">★ <b>4,8</b> · +1000 vendidos</p>
+    <div class="linha"><p class="preco">R$ 19,03</p><a class="ml" href="https://meli.la/2t7jkEK" target="_blank" rel="noopener sponsored" data-ml="compasso-escolar-de-metal-leo-leo" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/1shR7f9" target="_blank" rel="noopener sponsored" data-ml="calculadora-cientifica-240-funcoes-12-digitos" data-origem="catalogo-foto"><img src="/img/653983-MLB113662942823_062026.webp" alt="Calculadora Científica 240 Funções 12 Dígitos" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🧮 Calculadora</p>
+    <h3><a class="" href="https://meli.la/1shR7f9" target="_blank" rel="noopener sponsored" data-ml="calculadora-cientifica-240-funcoes-12-digitos" data-origem="catalogo-nome">Calculadora Científica 240 Funções 12 Dígitos</a></h3>
+    <p class="aval">★ <b>4,8</b> · +10mil vendidos</p>
+    <div class="linha"><p class="preco">R$ 20,49</p><a class="ml" href="https://meli.la/1shR7f9" target="_blank" rel="noopener sponsored" data-ml="calculadora-cientifica-240-funcoes-12-digitos" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+</div>
+<h3 class="cat-title" id="papeis">Papéis e EVA</h3>
+<div class="grid">
+<article class="card">
+  <a class="foto" href="https://meli.la/2Z7XkHt" target="_blank" rel="noopener sponsored" data-ml="papel-sulfite-a4-report-premium-500-folhas" data-origem="catalogo-foto"><img src="/img/931714-MLA115751913476_092026.webp" alt="Papel Sulfite A4 Report Premium 500 Folhas" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">📄 Papel sulfite A4</p>
+    <h3><a class="" href="https://meli.la/2Z7XkHt" target="_blank" rel="noopener sponsored" data-ml="papel-sulfite-a4-report-premium-500-folhas" data-origem="catalogo-nome">Papel Sulfite A4 Report Premium 500 Folhas</a></h3>
+    <p class="aval">★ <b>4,8</b> · +500mil vendidos</p>
+    <div class="linha"><p class="preco">R$ 34,95</p><a class="ml" href="https://meli.la/2Z7XkHt" target="_blank" rel="noopener sponsored" data-ml="papel-sulfite-a4-report-premium-500-folhas" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2VLLMaY" target="_blank" rel="noopener sponsored" data-ml="papel-sulfite-a3-report-premium-500-folhas" data-origem="catalogo-foto"><img src="/img/788840-MLA99509004934_112025.webp" alt="Papel Sulfite A3 Report Premium 500 Folhas" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">📄 Papel sulfite A3</p>
+    <h3><a class="" href="https://meli.la/2VLLMaY" target="_blank" rel="noopener sponsored" data-ml="papel-sulfite-a3-report-premium-500-folhas" data-origem="catalogo-nome">Papel Sulfite A3 Report Premium 500 Folhas</a></h3>
+    <p class="aval">★ <b>4,6</b> · +10mil vendidos</p>
+    <div class="linha"><p class="preco">R$ 69,99</p><a class="ml" href="https://meli.la/2VLLMaY" target="_blank" rel="noopener sponsored" data-ml="papel-sulfite-a3-report-premium-500-folhas" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/1BmSnNf" target="_blank" rel="noopener sponsored" data-ml="bloco-criativo-a4-masterprint-45-folhas-8-cores" data-origem="catalogo-foto"><img src="/img/989566-MLB87142191795_072025.webp" alt="Bloco Criativo A4 Masterprint 45 Folhas 8 Cores" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🟥 Papel color set / colorido</p>
+    <h3><a class="" href="https://meli.la/1BmSnNf" target="_blank" rel="noopener sponsored" data-ml="bloco-criativo-a4-masterprint-45-folhas-8-cores" data-origem="catalogo-nome">Bloco Criativo A4 Masterprint 45 Folhas 8 Cores</a></h3>
+    <p class="aval">★ <b>5,0</b> · +100 vendidos</p>
+    <div class="linha"><p class="preco">R$ 16,35</p><a class="ml" href="https://meli.la/1BmSnNf" target="_blank" rel="noopener sponsored" data-ml="bloco-criativo-a4-masterprint-45-folhas-8-cores" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2MjSh9a" target="_blank" rel="noopener sponsored" data-ml="papel-crepom-colorido-10-rolos-48-cm-x-2-m" data-origem="catalogo-foto"><img src="/img/849029-MLA118403187275_092026.webp" alt="Papel Crepom Colorido 10 Rolos 48 cm x 2 m" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🎀 Papel crepom</p>
+    <h3><a class="" href="https://meli.la/2MjSh9a" target="_blank" rel="noopener sponsored" data-ml="papel-crepom-colorido-10-rolos-48-cm-x-2-m" data-origem="catalogo-nome">Papel Crepom Colorido 10 Rolos 48 cm x 2 m</a></h3>
+    <p class="aval">★ <b>4,8</b> · +10mil vendidos</p>
+    <div class="linha"><p class="preco">R$ 22,98</p><a class="ml" href="https://meli.la/2MjSh9a" target="_blank" rel="noopener sponsored" data-ml="papel-crepom-colorido-10-rolos-48-cm-x-2-m" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2BoKkzS" target="_blank" rel="noopener sponsored" data-ml="50-cartolinas-coloridas-sortidas-48x66-cm" data-origem="catalogo-foto"><img src="/img/798659-MLB78061930325_072024.webp" alt="50 Cartolinas Coloridas Sortidas 48x66 cm" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🟨 Cartolina</p>
+    <h3><a class="" href="https://meli.la/2BoKkzS" target="_blank" rel="noopener sponsored" data-ml="50-cartolinas-coloridas-sortidas-48x66-cm" data-origem="catalogo-nome">50 Cartolinas Coloridas Sortidas 48x66 cm</a></h3>
+    <p class="aval">★ <b>5,0</b> · +50 vendidos</p>
+    <div class="linha"><p class="preco">R$ 56,90</p><a class="ml" href="https://meli.la/2BoKkzS" target="_blank" rel="noopener sponsored" data-ml="50-cartolinas-coloridas-sortidas-48x66-cm" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/33fm1L6" target="_blank" rel="noopener sponsored" data-ml="papel-camurca-60x40-cm-kit-5-cores" data-origem="catalogo-foto"><img src="/img/944689-MLB89666024162_082025.webp" alt="Papel Camurça 60x40 cm Kit 5 Cores" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🟫 Papel camurça</p>
+    <h3><a class="" href="https://meli.la/33fm1L6" target="_blank" rel="noopener sponsored" data-ml="papel-camurca-60x40-cm-kit-5-cores" data-origem="catalogo-nome">Papel Camurça 60x40 cm Kit 5 Cores</a></h3>
+    <p class="aval">★ <b>4,7</b> · +100 vendidos</p>
+    <div class="linha"><p class="preco">R$ 18,00</p><a class="ml" href="https://meli.la/33fm1L6" target="_blank" rel="noopener sponsored" data-ml="papel-camurca-60x40-cm-kit-5-cores" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/1WikaSF" target="_blank" rel="noopener sponsored" data-ml="papel-semi-kraft-bobina-60-cm-2-kg" data-origem="catalogo-foto"><img src="/img/744833-MLA100069911883_122025.webp" alt="Papel Semi Kraft Bobina 60 cm 2 kg" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">📜 Papel kraft</p>
+    <h3><a class="" href="https://meli.la/1WikaSF" target="_blank" rel="noopener sponsored" data-ml="papel-semi-kraft-bobina-60-cm-2-kg" data-origem="catalogo-nome">Papel Semi Kraft Bobina 60 cm 2 kg</a></h3>
+    <p class="aval">★ <b>4,8</b> · +10mil vendidos</p>
+    <div class="linha"><p class="preco">R$ 25,90</p><a class="ml" href="https://meli.la/1WikaSF" target="_blank" rel="noopener sponsored" data-ml="papel-semi-kraft-bobina-60-cm-2-kg" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2tS3rNr" target="_blank" rel="noopener sponsored" data-ml="papel-almaco-com-margem-e-pauta-bloco-400-folhas" data-origem="catalogo-foto"><img src="/img/951854-MLA96402088563_102025.webp" alt="Papel Almaço com Margem e Pauta Bloco 400 Folhas" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">📃 Folha de almaço</p>
+    <h3><a class="" href="https://meli.la/2tS3rNr" target="_blank" rel="noopener sponsored" data-ml="papel-almaco-com-margem-e-pauta-bloco-400-folhas" data-origem="catalogo-nome">Papel Almaço com Margem e Pauta Bloco 400 Folhas</a></h3>
+    <p class="aval">★ <b>4,9</b> · +1000 vendidos</p>
+    <div class="linha"><p class="preco">R$ 57,50</p><a class="ml" href="https://meli.la/2tS3rNr" target="_blank" rel="noopener sponsored" data-ml="papel-almaco-com-margem-e-pauta-bloco-400-folhas" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/1D4Rgw7" target="_blank" rel="noopener sponsored" data-ml="placas-de-eva-40x60-cm-kit-10-folhas" data-origem="catalogo-foto"><img src="/img/659189-MLA100062311993_122025.webp" alt="Placas de EVA 40x60 cm Kit 10 Folhas" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🟪 EVA</p>
+    <h3><a class="" href="https://meli.la/1D4Rgw7" target="_blank" rel="noopener sponsored" data-ml="placas-de-eva-40x60-cm-kit-10-folhas" data-origem="catalogo-nome">Placas de EVA 40x60 cm Kit 10 Folhas</a></h3>
+    <p class="aval">★ <b>4,9</b> · +1000 vendidos</p>
+    <div class="linha"><p class="preco">R$ 26,99</p><a class="ml" href="https://meli.la/1D4Rgw7" target="_blank" rel="noopener sponsored" data-ml="placas-de-eva-40x60-cm-kit-10-folhas" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/1uvkCLp" target="_blank" rel="noopener sponsored" data-ml="eva-com-glitter-40x48-cm-10-folhas" data-origem="catalogo-foto"><img src="/img/618337-MLB68824299462_032023.webp" alt="EVA com Glitter 40x48 cm 10 Folhas" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">✨ EVA com glitter</p>
+    <h3><a class="" href="https://meli.la/1uvkCLp" target="_blank" rel="noopener sponsored" data-ml="eva-com-glitter-40x48-cm-10-folhas" data-origem="catalogo-nome">EVA com Glitter 40x48 cm 10 Folhas</a></h3>
+    <p class="aval">★ <b>4,8</b> · +1000 vendidos</p>
+    <div class="linha"><p class="preco">R$ 35,00</p><a class="ml" href="https://meli.la/1uvkCLp" target="_blank" rel="noopener sponsored" data-ml="eva-com-glitter-40x48-cm-10-folhas" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2Vnk6vu" target="_blank" rel="noopener sponsored" data-ml="tnt-10-metros-cores" data-origem="catalogo-foto"><img src="/img/647981-MLB47516655241_092021.webp" alt="TNT 10 Metros Cores" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🧵 TNT</p>
+    <h3><a class="" href="https://meli.la/2Vnk6vu" target="_blank" rel="noopener sponsored" data-ml="tnt-10-metros-cores" data-origem="catalogo-nome">TNT 10 Metros Cores</a></h3>
+    <p class="aval">★ <b>4,9</b> · +10mil vendidos</p>
+    <div class="linha"><p class="preco">R$ 31,90</p><a class="ml" href="https://meli.la/2Vnk6vu" target="_blank" rel="noopener sponsored" data-ml="tnt-10-metros-cores" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+</div>
+<h3 class="cat-title" id="arte">Arte</h3>
+<div class="grid">
+<article class="card">
+  <a class="foto" href="https://meli.la/1tfSWfB" target="_blank" rel="noopener sponsored" data-ml="tinta-guache-acrilex-6-cores-15-ml" data-origem="catalogo-foto"><img src="/img/747090-MLA121374273325_112026.webp" alt="Tinta Guache Acrilex 6 Cores 15 ml" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🎨 Tinta guache</p>
+    <h3><a class="" href="https://meli.la/1tfSWfB" target="_blank" rel="noopener sponsored" data-ml="tinta-guache-acrilex-6-cores-15-ml" data-origem="catalogo-nome">Tinta Guache Acrilex 6 Cores 15 ml</a></h3>
+    <p class="aval">★ <b>4,9</b> · +1000 vendidos</p>
+    <div class="linha"><p class="preco">R$ 19,00</p><a class="ml" href="https://meli.la/1tfSWfB" target="_blank" rel="noopener sponsored" data-ml="tinta-guache-acrilex-6-cores-15-ml" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2qCFciM" target="_blank" rel="noopener sponsored" data-ml="aquarela-acrilex-12-cores-pincel" data-origem="catalogo-foto"><img src="/img/990018-MLA99992468047_112025.webp" alt="Aquarela Acrilex 12 Cores + Pincel" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🎨 Aquarela</p>
+    <h3><a class="" href="https://meli.la/2qCFciM" target="_blank" rel="noopener sponsored" data-ml="aquarela-acrilex-12-cores-pincel" data-origem="catalogo-nome">Aquarela Acrilex 12 Cores + Pincel</a></h3>
+    <p class="aval">★ <b>4,9</b> · +1000 vendidos</p>
+    <div class="linha"><p class="preco">R$ 25,90</p><a class="ml" href="https://meli.la/2qCFciM" target="_blank" rel="noopener sponsored" data-ml="aquarela-acrilex-12-cores-pincel" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/1tYyJKL" target="_blank" rel="noopener sponsored" data-ml="tinta-pva-acrilex-6-cores-20-ml" data-origem="catalogo-foto"><img src="/img/791492-MLA100080933917_122025.webp" alt="Tinta PVA Acrilex 6 Cores 20 ml" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🎨 Tinta PVA/plástica</p>
+    <h3><a class="" href="https://meli.la/1tYyJKL" target="_blank" rel="noopener sponsored" data-ml="tinta-pva-acrilex-6-cores-20-ml" data-origem="catalogo-nome">Tinta PVA Acrilex 6 Cores 20 ml</a></h3>
+    <p class="aval">★ <b>4,8</b> · +500 vendidos</p>
+    <div class="linha"><p class="preco">R$ 20,54</p><a class="ml" href="https://meli.la/1tYyJKL" target="_blank" rel="noopener sponsored" data-ml="tinta-pva-acrilex-6-cores-20-ml" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/1r5vziM" target="_blank" rel="noopener sponsored" data-ml="20-pinceis-escolares-pra-guache" data-origem="catalogo-foto"><img src="/img/742377-MLA112156216667_052026.webp" alt="20 Pincéis Escolares pra Guache" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🖌️ Pincel</p>
+    <h3><a class="" href="https://meli.la/1r5vziM" target="_blank" rel="noopener sponsored" data-ml="20-pinceis-escolares-pra-guache" data-origem="catalogo-nome">20 Pincéis Escolares pra Guache</a></h3>
+    <p class="aval">★ <b>4,8</b> · +1000 vendidos</p>
+    <div class="linha"><p class="preco">R$ 19,30</p><a class="ml" href="https://meli.la/1r5vziM" target="_blank" rel="noopener sponsored" data-ml="20-pinceis-escolares-pra-guache" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2hGp4cL" target="_blank" rel="noopener sponsored" data-ml="kit-24-massinhas-de-modelar-12-cores" data-origem="catalogo-foto"><img src="/img/853882-MLA106730137638_022026.webp" alt="Kit 24 Massinhas de Modelar 12 Cores" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🟢 Massinha de modelar</p>
+    <h3><a class="" href="https://meli.la/2hGp4cL" target="_blank" rel="noopener sponsored" data-ml="kit-24-massinhas-de-modelar-12-cores" data-origem="catalogo-nome">Kit 24 Massinhas de Modelar 12 Cores</a></h3>
+    <p class="aval">★ <b>4,8</b> · +1000 vendidos</p>
+    <div class="linha"><p class="preco">R$ 19,84</p><a class="ml" href="https://meli.la/2hGp4cL" target="_blank" rel="noopener sponsored" data-ml="kit-24-massinhas-de-modelar-12-cores" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2zGEzLD" target="_blank" rel="noopener sponsored" data-ml="avental-infantil-transparente-de-plastico-pra-pint" data-origem="catalogo-foto"><img src="/img/768385-MLA99840167459_112025.webp" alt="Avental Infantil Transparente de Plástico pra Pintura" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🥼 Avental de pintura</p>
+    <h3><a class="" href="https://meli.la/2zGEzLD" target="_blank" rel="noopener sponsored" data-ml="avental-infantil-transparente-de-plastico-pra-pint" data-origem="catalogo-nome">Avental Infantil Transparente de Plástico pra Pintura</a></h3>
+    <p class="aval">★ <b>4,7</b> · +500 vendidos</p>
+    <div class="linha"><p class="preco">R$ 19,00</p><a class="ml" href="https://meli.la/2zGEzLD" target="_blank" rel="noopener sponsored" data-ml="avental-infantil-transparente-de-plastico-pra-pint" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2tfUyLq" target="_blank" rel="noopener sponsored" data-ml="kit-300-palitos-de-picole-coloridos-ponta-redonda" data-origem="catalogo-foto"><img src="/img/845271-MLB98380504729_112025.webp" alt="Kit 300 Palitos de Picolé Coloridos Ponta Redonda" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🍡 Palito de picolé</p>
+    <h3><a class="" href="https://meli.la/2tfUyLq" target="_blank" rel="noopener sponsored" data-ml="kit-300-palitos-de-picole-coloridos-ponta-redonda" data-origem="catalogo-nome">Kit 300 Palitos de Picolé Coloridos Ponta Redonda</a></h3>
+    <p class="aval">★ <b>5,0</b> · +100 vendidos</p>
+    <div class="linha"><p class="preco">R$ 30,99</p><a class="ml" href="https://meli.la/2tfUyLq" target="_blank" rel="noopener sponsored" data-ml="kit-300-palitos-de-picole-coloridos-ponta-redonda" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/15xmxva" target="_blank" rel="noopener sponsored" data-ml="paete-lantejoula-espelhada-250-pecas" data-origem="catalogo-foto"><img src="/img/641973-MLB111038272796_052026.webp" alt="Paetê Lantejoula Espelhada 250 Peças" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">✨ Lantejoula</p>
+    <h3><a class="" href="https://meli.la/15xmxva" target="_blank" rel="noopener sponsored" data-ml="paete-lantejoula-espelhada-250-pecas" data-origem="catalogo-nome">Paetê Lantejoula Espelhada 250 Peças</a></h3>
+    <p class="aval">★ <b>4,9</b> · +100 vendidos</p>
+    <div class="linha"><p class="preco">R$ 19,90</p><a class="ml" href="https://meli.la/15xmxva" target="_blank" rel="noopener sponsored" data-ml="paete-lantejoula-espelhada-250-pecas" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2aexcCF" target="_blank" rel="noopener sponsored" data-ml="kit-12-potes-de-glitter-coloridos-5-g" data-origem="catalogo-foto"><img src="/img/915471-MLB113729735394_072026.webp" alt="Kit 12 Potes de Glitter Coloridos 5 g" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">✨ Glitter</p>
+    <h3><a class="" href="https://meli.la/2aexcCF" target="_blank" rel="noopener sponsored" data-ml="kit-12-potes-de-glitter-coloridos-5-g" data-origem="catalogo-nome">Kit 12 Potes de Glitter Coloridos 5 g</a></h3>
+    <p class="aval">★ <b>4,8</b> · +100 vendidos</p>
+    <div class="linha"><p class="preco">R$ 21,82</p><a class="ml" href="https://meli.la/2aexcCF" target="_blank" rel="noopener sponsored" data-ml="kit-12-potes-de-glitter-coloridos-5-g" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/1zxMYx7" target="_blank" rel="noopener sponsored" data-ml="olhinhos-moveis-8-mm-100-unidades" data-origem="catalogo-foto"><img src="/img/831256-MLB80695409187_112024.webp" alt="Olhinhos Móveis 8 mm 100 Unidades" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">👀 Olhinho móvel</p>
+    <h3><a class="" href="https://meli.la/1zxMYx7" target="_blank" rel="noopener sponsored" data-ml="olhinhos-moveis-8-mm-100-unidades" data-origem="catalogo-nome">Olhinhos Móveis 8 mm 100 Unidades</a></h3>
+    <p class="aval">★ <b>4,9</b> · +1000 vendidos</p>
+    <div class="linha"><p class="preco">R$ 13,25</p><a class="ml" href="https://meli.la/1zxMYx7" target="_blank" rel="noopener sponsored" data-ml="olhinhos-moveis-8-mm-100-unidades" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/33mkW7E" target="_blank" rel="noopener sponsored" data-ml="barbante-colorido-com-brilho-400-g" data-origem="catalogo-foto"><img src="/img/763006-MLA119525823101_102026.webp" alt="Barbante Colorido com Brilho 400 g" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🧶 Barbante</p>
+    <h3><a class="" href="https://meli.la/33mkW7E" target="_blank" rel="noopener sponsored" data-ml="barbante-colorido-com-brilho-400-g" data-origem="catalogo-nome">Barbante Colorido com Brilho 400 g</a></h3>
+    <p class="aval">★ <b>4,9</b> · +100 vendidos</p>
+    <div class="linha"><p class="preco">R$ 28,90</p><a class="ml" href="https://meli.la/33mkW7E" target="_blank" rel="noopener sponsored" data-ml="barbante-colorido-com-brilho-400-g" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2ELyBK8" target="_blank" rel="noopener sponsored" data-ml="100-mini-prendedores-de-madeira-2-5-cm" data-origem="catalogo-foto"><img src="/img/749966-MLB86962350650_072025.webp" alt="100 Mini Prendedores de Madeira 2,5 cm" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🪵 Prendedor de madeira</p>
+    <h3><a class="" href="https://meli.la/2ELyBK8" target="_blank" rel="noopener sponsored" data-ml="100-mini-prendedores-de-madeira-2-5-cm" data-origem="catalogo-nome">100 Mini Prendedores de Madeira 2,5 cm</a></h3>
+    <p class="aval">★ <b>4,8</b> · +5mil vendidos</p>
+    <div class="linha"><p class="preco">R$ 19,00</p><a class="ml" href="https://meli.la/2ELyBK8" target="_blank" rel="noopener sponsored" data-ml="100-mini-prendedores-de-madeira-2-5-cm" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+</div>
+<h3 class="cat-title" id="organizacao">Organização</h3>
+<div class="grid">
+<article class="card">
+  <a class="foto" href="https://meli.la/17SgAXN" target="_blank" rel="noopener sponsored" data-ml="kit-10-pastas-com-elastico-oficio-a4-fume" data-origem="catalogo-foto"><img src="/img/780225-MLA99594177318_122025.webp" alt="Kit 10 Pastas com Elástico Ofício/A4 Fumê" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">📁 Pasta com elástico</p>
+    <h3><a class="" href="https://meli.la/17SgAXN" target="_blank" rel="noopener sponsored" data-ml="kit-10-pastas-com-elastico-oficio-a4-fume" data-origem="catalogo-nome">Kit 10 Pastas com Elástico Ofício/A4 Fumê</a></h3>
+    <p class="aval">★ <b>4,9</b> · +5mil vendidos</p>
+    <div class="linha"><p class="preco">R$ 30,28</p><a class="ml" href="https://meli.la/17SgAXN" target="_blank" rel="noopener sponsored" data-ml="kit-10-pastas-com-elastico-oficio-a4-fume" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2CKbNuC" target="_blank" rel="noopener sponsored" data-ml="pasta-catalogo-a4-com-visor-50-plasticos-acp" data-origem="catalogo-foto"><img src="/img/624436-MLA112360716828_062026.webp" alt="Pasta Catálogo A4 com Visor 50 Plásticos ACP" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">📁 Pasta catálogo</p>
+    <h3><a class="" href="https://meli.la/2CKbNuC" target="_blank" rel="noopener sponsored" data-ml="pasta-catalogo-a4-com-visor-50-plasticos-acp" data-origem="catalogo-nome">Pasta Catálogo A4 com Visor 50 Plásticos ACP</a></h3>
+    <p class="aval">★ <b>4,8</b> · +10mil vendidos</p>
+    <div class="linha"><p class="preco">R$ 20,90</p><a class="ml" href="https://meli.la/2CKbNuC" target="_blank" rel="noopener sponsored" data-ml="pasta-catalogo-a4-com-visor-50-plasticos-acp" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/1SKbb7c" target="_blank" rel="noopener sponsored" data-ml="5-envelopes-plasticos-com-botao-a4-pretos" data-origem="catalogo-foto"><img src="/img/907886-MLA100125004669_122025.webp" alt="5 Envelopes Plásticos com Botão A4 Pretos" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">✉️ Envelope plástico</p>
+    <h3><a class="" href="https://meli.la/1SKbb7c" target="_blank" rel="noopener sponsored" data-ml="5-envelopes-plasticos-com-botao-a4-pretos" data-origem="catalogo-nome">5 Envelopes Plásticos com Botão A4 Pretos</a></h3>
+    <p class="aval">★ <b>4,8</b> · +500 vendidos</p>
+    <div class="linha"><p class="preco">R$ 47,50</p><a class="ml" href="https://meli.la/1SKbb7c" target="_blank" rel="noopener sponsored" data-ml="5-envelopes-plasticos-com-botao-a4-pretos" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2JFxzQH" target="_blank" rel="noopener sponsored" data-ml="fita-adesiva-durex-12-mm-x-10-m-10-rolos" data-origem="catalogo-foto"><img src="/img/699175-MLA99363303178_112025.webp" alt="Fita Adesiva Durex 12 mm x 10 m 10 Rolos" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🩹 Fita adesiva (durex)</p>
+    <h3><a class="" href="https://meli.la/2JFxzQH" target="_blank" rel="noopener sponsored" data-ml="fita-adesiva-durex-12-mm-x-10-m-10-rolos" data-origem="catalogo-nome">Fita Adesiva Durex 12 mm x 10 m 10 Rolos</a></h3>
+    <p class="aval">★ <b>4,6</b> · +5mil vendidos</p>
+    <div class="linha"><p class="preco">R$ 24,75</p><a class="ml" href="https://meli.la/2JFxzQH" target="_blank" rel="noopener sponsored" data-ml="fita-adesiva-durex-12-mm-x-10-m-10-rolos" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2uc5xf2" target="_blank" rel="noopener sponsored" data-ml="kit-2-fitas-crepe-adere-18-mm-x-50-m" data-origem="catalogo-foto"><img src="/img/992569-MLA100084604557_122025.webp" alt="Kit 2 Fitas Crepe Adere 18 mm x 50 m" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🩹 Fita crepe</p>
+    <h3><a class="" href="https://meli.la/2uc5xf2" target="_blank" rel="noopener sponsored" data-ml="kit-2-fitas-crepe-adere-18-mm-x-50-m" data-origem="catalogo-nome">Kit 2 Fitas Crepe Adere 18 mm x 50 m</a></h3>
+    <p class="aval">★ <b>4,8</b> · +5mil vendidos</p>
+    <div class="linha"><p class="preco">R$ 22,72</p><a class="ml" href="https://meli.la/2uc5xf2" target="_blank" rel="noopener sponsored" data-ml="kit-2-fitas-crepe-adere-18-mm-x-50-m" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2jXf9AD" target="_blank" rel="noopener sponsored" data-ml="12-fitas-adesivas-coloridas-12-mm-x-10-m" data-origem="catalogo-foto"><img src="/img/697055-MLA114544238854_082026.webp" alt="12 Fitas Adesivas Coloridas 12 mm x 10 m" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🌈 Fita adesiva colorida</p>
+    <h3><a class="" href="https://meli.la/2jXf9AD" target="_blank" rel="noopener sponsored" data-ml="12-fitas-adesivas-coloridas-12-mm-x-10-m" data-origem="catalogo-nome">12 Fitas Adesivas Coloridas 12 mm x 10 m</a></h3>
+    <p class="aval">★ <b>5,0</b> · +100 vendidos</p>
+    <div class="linha"><p class="preco">R$ 24,49</p><a class="ml" href="https://meli.la/2jXf9AD" target="_blank" rel="noopener sponsored" data-ml="12-fitas-adesivas-coloridas-12-mm-x-10-m" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/1z5jckh" target="_blank" rel="noopener sponsored" data-ml="bloco-adesivo-colorido-jocar-76x76-mm-400-folhas" data-origem="catalogo-foto"><img src="/img/602749-MLA99583758284_122025.webp" alt="Bloco Adesivo Colorido Jocar 76x76 mm 400 Folhas" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🗒️ Bloco adesivo (post-it)</p>
+    <h3><a class="" href="https://meli.la/1z5jckh" target="_blank" rel="noopener sponsored" data-ml="bloco-adesivo-colorido-jocar-76x76-mm-400-folhas" data-origem="catalogo-nome">Bloco Adesivo Colorido Jocar 76x76 mm 400 Folhas</a></h3>
+    <p class="aval">★ <b>4,8</b> · +10mil vendidos</p>
+    <div class="linha"><p class="preco">R$ 19,36</p><a class="ml" href="https://meli.la/1z5jckh" target="_blank" rel="noopener sponsored" data-ml="bloco-adesivo-colorido-jocar-76x76-mm-400-folhas" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2Ge7zUa" target="_blank" rel="noopener sponsored" data-ml="kit-300-clipes-coloridos-de-metal-33-mm" data-origem="catalogo-foto"><img src="/img/800970-MLA117670366696_102026.webp" alt="Kit 300 Clipes Coloridos de Metal 33 mm" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">📎 Clipes</p>
+    <h3><a class="" href="https://meli.la/2Ge7zUa" target="_blank" rel="noopener sponsored" data-ml="kit-300-clipes-coloridos-de-metal-33-mm" data-origem="catalogo-nome">Kit 300 Clipes Coloridos de Metal 33 mm</a></h3>
+    <p class="aval">★ <b>4,9</b> · +500 vendidos</p>
+    <div class="linha"><p class="preco">R$ 21,77</p><a class="ml" href="https://meli.la/2Ge7zUa" target="_blank" rel="noopener sponsored" data-ml="kit-300-clipes-coloridos-de-metal-33-mm" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/1C4KEoS" target="_blank" rel="noopener sponsored" data-ml="grampeador-mini-jocar-rosa-pastel" data-origem="catalogo-foto"><img src="/img/945279-MLA100081711139_122025.webp" alt="Grampeador Mini Jocar Rosa Pastel" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">📎 Grampeador</p>
+    <h3><a class="" href="https://meli.la/1C4KEoS" target="_blank" rel="noopener sponsored" data-ml="grampeador-mini-jocar-rosa-pastel" data-origem="catalogo-nome">Grampeador Mini Jocar Rosa Pastel</a></h3>
+    <p class="aval">★ <b>4,8</b> · +50 vendidos</p>
+    <div class="linha"><p class="preco">R$ 19,39</p><a class="ml" href="https://meli.la/1C4KEoS" target="_blank" rel="noopener sponsored" data-ml="grampeador-mini-jocar-rosa-pastel" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/1F8y6n5" target="_blank" rel="noopener sponsored" data-ml="etiqueta-escolar-personalizada-com-nome-50-unidade" data-origem="catalogo-foto"><img src="/img/968924-MLB115632493328_092026.webp" alt="Etiqueta Escolar Personalizada com Nome 50 Unidades" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🏷️ Etiqueta de nome</p>
+    <h3><a class="" href="https://meli.la/1F8y6n5" target="_blank" rel="noopener sponsored" data-ml="etiqueta-escolar-personalizada-com-nome-50-unidade" data-origem="catalogo-nome">Etiqueta Escolar Personalizada com Nome 50 Unidades</a></h3>
+    <p class="aval">★ <b>4,9</b> · +100 vendidos</p>
+    <div class="linha"><p class="preco">R$ 24,90</p><a class="ml" href="https://meli.la/1F8y6n5" target="_blank" rel="noopener sponsored" data-ml="etiqueta-escolar-personalizada-com-nome-50-unidade" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/1WHbZ7L" target="_blank" rel="noopener sponsored" data-ml="5-capas-plasticas-prontas-pra-caderno" data-origem="catalogo-foto"><img src="/img/634844-MLB115585158580_092026.webp" alt="5 Capas Plásticas Prontas pra Caderno" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">📦 Plástico pra encapar</p>
+    <h3><a class="" href="https://meli.la/1WHbZ7L" target="_blank" rel="noopener sponsored" data-ml="5-capas-plasticas-prontas-pra-caderno" data-origem="catalogo-nome">5 Capas Plásticas Prontas pra Caderno</a></h3>
+    <p class="aval">★ <b>4,5</b> · +100 vendidos</p>
+    <div class="linha"><p class="preco">R$ 25,50</p><a class="ml" href="https://meli.la/1WHbZ7L" target="_blank" rel="noopener sponsored" data-ml="5-capas-plasticas-prontas-pra-caderno" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/1hRKFoF" target="_blank" rel="noopener sponsored" data-ml="box-organizador-grande-com-17-divisorias-e-tampa" data-origem="catalogo-foto"><img src="/img/653642-MLB77114390850_062024.webp" alt="Box Organizador Grande com 17 Divisórias e Tampa" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🗃️ Caixa organizadora</p>
+    <h3><a class="" href="https://meli.la/1hRKFoF" target="_blank" rel="noopener sponsored" data-ml="box-organizador-grande-com-17-divisorias-e-tampa" data-origem="catalogo-nome">Box Organizador Grande com 17 Divisórias e Tampa</a></h3>
+    <p class="aval">★ <b>4,9</b> · +1000 vendidos</p>
+    <div class="linha"><p class="preco">R$ 44,90</p><a class="ml" href="https://meli.la/1hRKFoF" target="_blank" rel="noopener sponsored" data-ml="box-organizador-grande-com-17-divisorias-e-tampa" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2wDYT2V" target="_blank" rel="noopener sponsored" data-ml="apagador-magnetico-pra-quadro-branco-masterprint" data-origem="catalogo-foto"><img src="/img/724438-MLA99577229820_122025.webp" alt="Apagador Magnético pra Quadro Branco Masterprint" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🧽 Apagador de quadro</p>
+    <h3><a class="" href="https://meli.la/2wDYT2V" target="_blank" rel="noopener sponsored" data-ml="apagador-magnetico-pra-quadro-branco-masterprint" data-origem="catalogo-nome">Apagador Magnético pra Quadro Branco Masterprint</a></h3>
+    <p class="aval">★ <b>4,7</b> · +1000 vendidos</p>
+    <div class="linha"><p class="preco">R$ 19,00</p><a class="ml" href="https://meli.la/2wDYT2V" target="_blank" rel="noopener sponsored" data-ml="apagador-magnetico-pra-quadro-branco-masterprint" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+</div>
+<h3 class="cat-title" id="mochila">Mochila e lancheira</h3>
+<div class="grid">
+<article class="card">
+  <a class="foto" href="https://meli.la/2vp3EMi" target="_blank" rel="noopener sponsored" data-ml="estojo-box-organizador-com-divisorias-pra-100-iten" data-origem="catalogo-foto"><img src="/img/781579-MLA102185409425_122025.webp" alt="Estojo Box Organizador com Divisórias pra 100 Itens" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">👝 Estojo</p>
+    <h3><a class="" href="https://meli.la/2vp3EMi" target="_blank" rel="noopener sponsored" data-ml="estojo-box-organizador-com-divisorias-pra-100-iten" data-origem="catalogo-nome">Estojo Box Organizador com Divisórias pra 100 Itens</a></h3>
+    <p class="aval">★ <b>4,9</b> · +10mil vendidos</p>
+    <div class="linha"><p class="preco">R$ 25,98</p><a class="ml" href="https://meli.la/2vp3EMi" target="_blank" rel="noopener sponsored" data-ml="estojo-box-organizador-com-divisorias-pra-100-iten" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/1nFaWvs" target="_blank" rel="noopener sponsored" data-ml="mochila-escolar-infantil-homem-aranha" data-origem="catalogo-foto"><img src="/img/679662-MLA116213504624_092026.webp" alt="Mochila Escolar Infantil Homem-Aranha" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🎒 Mochila</p>
+    <h3><a class="" href="https://meli.la/1nFaWvs" target="_blank" rel="noopener sponsored" data-ml="mochila-escolar-infantil-homem-aranha" data-origem="catalogo-nome">Mochila Escolar Infantil Homem-Aranha</a></h3>
+    <p class="aval">★ <b>4,9</b> · +1000 vendidos</p>
+    <div class="linha"><p class="preco">R$ 69,00</p><a class="ml" href="https://meli.la/1nFaWvs" target="_blank" rel="noopener sponsored" data-ml="mochila-escolar-infantil-homem-aranha" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2LuTEJ3" target="_blank" rel="noopener sponsored" data-ml="lancheira-termica-infantil-com-porta-garrafa-e-alc" data-origem="catalogo-foto"><img src="/img/697112-MLB88779252708_082025.webp" alt="Lancheira Térmica Infantil com Porta-Garrafa e Alça" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🍱 Lancheira</p>
+    <h3><a class="" href="https://meli.la/2LuTEJ3" target="_blank" rel="noopener sponsored" data-ml="lancheira-termica-infantil-com-porta-garrafa-e-alc" data-origem="catalogo-nome">Lancheira Térmica Infantil com Porta-Garrafa e Alça</a></h3>
+    <p class="aval">★ <b>4,8</b> · +1000 vendidos</p>
+    <div class="linha"><p class="preco">R$ 51,63</p><a class="ml" href="https://meli.la/2LuTEJ3" target="_blank" rel="noopener sponsored" data-ml="lancheira-termica-infantil-com-porta-garrafa-e-alc" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2qZ3xuH" target="_blank" rel="noopener sponsored" data-ml="garrafa-squeeze-infantil-com-canudo-e-alca" data-origem="catalogo-foto"><img src="/img/977826-MLB116797145967_082026.webp" alt="Garrafa Squeeze Infantil com Canudo e Alça" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🥤 Garrafinha de água</p>
+    <h3><a class="" href="https://meli.la/2qZ3xuH" target="_blank" rel="noopener sponsored" data-ml="garrafa-squeeze-infantil-com-canudo-e-alca" data-origem="catalogo-nome">Garrafa Squeeze Infantil com Canudo e Alça</a></h3>
+    <p class="aval">★ <b>4,9</b> · +1000 vendidos</p>
+    <div class="linha"><p class="preco">R$ 22,79</p><a class="ml" href="https://meli.la/2qZ3xuH" target="_blank" rel="noopener sponsored" data-ml="garrafa-squeeze-infantil-com-canudo-e-alca" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/2C2cTRa" target="_blank" rel="noopener sponsored" data-ml="copos-plasticos-coloridos-resistentes-10-unidades" data-origem="catalogo-foto"><img src="/img/919835-MLB92094246974_092025.webp" alt="Copos Plásticos Coloridos Resistentes 10 Unidades" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">🥛 Copo plástico</p>
+    <h3><a class="" href="https://meli.la/2C2cTRa" target="_blank" rel="noopener sponsored" data-ml="copos-plasticos-coloridos-resistentes-10-unidades" data-origem="catalogo-nome">Copos Plásticos Coloridos Resistentes 10 Unidades</a></h3>
+    <p class="aval">★ <b>4,8</b> · +100 vendidos</p>
+    <div class="linha"><p class="preco">R$ 21,99</p><a class="ml" href="https://meli.la/2C2cTRa" target="_blank" rel="noopener sponsored" data-ml="copos-plasticos-coloridos-resistentes-10-unidades" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+<article class="card">
+  <a class="foto" href="https://meli.la/1TCyL1A" target="_blank" rel="noopener sponsored" data-ml="agenda-2027-tilibra-pepper-diaria-capa-dura" data-origem="catalogo-foto"><img src="/img/668939-MLB118721865331_102026.webp" alt="Agenda 2027 Tilibra Pepper Diária Capa Dura" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">📅 Agenda escolar</p>
+    <h3><a class="" href="https://meli.la/1TCyL1A" target="_blank" rel="noopener sponsored" data-ml="agenda-2027-tilibra-pepper-diaria-capa-dura" data-origem="catalogo-nome">Agenda 2027 Tilibra Pepper Diária Capa Dura</a></h3>
+    <p class="aval">★ <b>4,8</b> · +10mil vendidos</p>
+    <div class="linha"><p class="preco">R$ 26,10</p><a class="ml" href="https://meli.la/1TCyL1A" target="_blank" rel="noopener sponsored" data-ml="agenda-2027-tilibra-pepper-diaria-capa-dura" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+</div>
+<h3 class="cat-title" id="livros">Dicionário</h3>
+<div class="grid">
+<article class="card">
+  <a class="foto" href="https://meli.la/33nGccm" target="_blank" rel="noopener sponsored" data-ml="dicionario-escolar-da-lingua-portuguesa-ciranda-cu" data-origem="catalogo-foto"><img src="/img/744825-MLA113455411077_062026.webp" alt="Dicionário Escolar da Língua Portuguesa Ciranda Cultural" loading="lazy" decoding="async"></a>
+  <div class="corpo">
+    <p class="cat">📕 Dicionário</p>
+    <h3><a class="" href="https://meli.la/33nGccm" target="_blank" rel="noopener sponsored" data-ml="dicionario-escolar-da-lingua-portuguesa-ciranda-cu" data-origem="catalogo-nome">Dicionário Escolar da Língua Portuguesa Ciranda Cultural</a></h3>
+    <p class="aval">★ <b>4,9</b> · +10mil vendidos</p>
+    <div class="linha"><p class="preco">R$ 19,00</p><a class="ml" href="https://meli.la/33nGccm" target="_blank" rel="noopener sponsored" data-ml="dicionario-escolar-da-lingua-portuguesa-ciranda-cu" data-origem="catalogo-botao">Ver no ML <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></div>
+  </div>
+</article>
+</div>
+
+  <p class="disc">Preços conferidos no Mercado Livre e que mudam todo dia. O valor final, o frete e os cupons aparecem no anúncio.</p>
+</div></section>
+<section class="sec"><div class="wrap estreito">
+  <div class="grupo">
+    <div class="grupo-tx">
+      <h3>Ainda vai demorar pra comprar?</h3>
+      <p>Entra no grupo <b>Oferta do Rafa</b> no WhatsApp: cupons e quedas de preço do Mercado Livre todo dia, inclusive de material escolar até a volta às aulas.</p>
+    </div>
+    <a class="btn grupo-btn" href="https://chat.whatsapp.com/D82aInQ2EiGCtxURZDOCf6" target="_blank" rel="noopener" data-grupo="home">Entrar no grupo grátis</a>
+  </div>
+</div></section>
+<section class="sec" id="duvidas"><div class="wrap estreito">
+  <div class="sec-title"><h2>Dúvidas</h2></div>
+  <div class="faq"><details><summary>Como vocês leem a lista?</summary><p>Uma inteligência artificial lê a foto (vale lista impressa, escrita à mão, print ou PDF), separa item por item com a quantidade e a gente procura cada um no nosso catálogo de material escolar do Mercado Livre, sempre o mais barato que tem boa avaliação.</p></details><details><summary>A foto da lista fica guardada?</summary><p>Não. A foto só é usada pra leitura e é descartada. Se você compartilhar o orçamento no WhatsApp, guardamos só a imagem do orçamento e os itens, pra quem receber o link conseguir abrir.</p></details><details><summary>Por que cada item tem seu próprio botão?</summary><p>Porque cada produto é de uma loja diferente dentro do Mercado Livre. Você abre um por um, confere o preço do dia e põe no carrinho do ML. No fim paga tudo junto lá, e várias lojas dão frete grátis no carrinho.</p></details><details><summary>Às vezes vem uma caixa com mais unidades do que a lista pede. Por quê?</summary><p>Porque muitas vezes a caixa com 12 ou 24 sai mais barata do que comprar 2 ou 3 soltos. Quando isso acontece, a gente avisa no item quantos vêm. Se quiser outra opção, toque em "trocar".</p></details><details><summary>Leu algum item errado?</summary><p>Toque em "trocar" pra ver outras opções do mesmo item. Se o item não estiver no catálogo, ele vai pra "Pra buscar à parte" com o link de busca do Mercado Livre.</p></details><details><summary>Os preços são esses mesmo?</summary><p>São os preços que conferimos no Mercado Livre. Preço muda todo dia (às vezes cai com cupom), então o valor que vale é o que aparece no anúncio na hora da compra.</p></details><details><summary>É seguro comprar pelo link?</summary><p>Sim. A compra é feita no próprio Mercado Livre, com Compra Garantida. A gente só indica e monta o orçamento.</p></details></div>
+</div></section>
+</main>
+<footer><div class="in">
+  <p>Material Escolar do Rafa © 2026 · Uma página do <b>Oferta do Rafa</b>. Indicamos produtos vendidos no Mercado Livre; ao comprar pelos nossos links podemos receber uma comissão, sem custo extra pra você. Preços e estoque mudam todo dia: o valor final é o do Mercado Livre.</p>
+  <a href="#enviar-lista">Mandar lista</a> · <a href="#catalogo">Produtos</a> · <a href="/privacidade.html">Política de privacidade</a>
+</div></footer>
+<script src="/produtos.js?v=1"></script>
+<script src="/assets/app.js?v=1"></script>
+<script src="/assets/lista.js?v=1"></script>
+</body>
+</html>
