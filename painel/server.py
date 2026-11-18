@@ -259,7 +259,10 @@ class H(BaseHTTPRequestHandler):
                                              headers={'Content-Type': 'application/json', 'x-goog-api-key': GEMINI_KEY})
                 with urllib.request.urlopen(req, timeout=40) as r:
                     resp = json.load(r)
-                txt = ''.join(p.get('text', '') for p in resp['candidates'][0]['content']['parts'])
+                cand = (resp.get('candidates') or [{}])[0]
+                if not (cand.get('content') or {}).get('parts'):
+                    raise ValueError('sem conteudo: ' + str(cand.get('finishReason')) + ' ' + str(resp.get('promptFeedback'))[:120])
+                txt = ''.join(p.get('text', '') for p in cand['content']['parts'])
                 out = json.loads(txt)
                 itens = []
                 for it in (out.get('itens') or [])[:120]:
@@ -277,7 +280,7 @@ class H(BaseHTTPRequestHandler):
             except Exception as e:
                 ult = f'{modelo}: {e!r}'
             print('gemini falhou', ult, flush=True)
-        return self._json(502, {'erro': 'Não consegui ler a lista agora. Tente de novo em instantes ou cole o texto.'})
+        return self._json(502, {'erro': 'Não consegui ler a lista agora. Tente de novo em instantes ou cole o texto.', 'motivo': clip(re.sub(r'key=[^&\s]+', '', ult or ''), 300)})
 
     def do_HEAD(self):
         return self.do_GET()
