@@ -869,5 +869,496 @@
   ],
   "grupo": "organizacao",
   "busca": "https://meli.la/32Tyc96"
+ },
+ {
+  "id": "lapiseira",
+  "nome": "Lapiseira",
+  "unidade": "lapiseira",
+  "unidade_pl": "lapiseiras",
+  "emoji": "✏️",
+  "termos": [
+   "lapiseira-0.7-escolar",
+   "lapiseira-0.5"
+  ],
+  "grupo": "escrita",
+  "busca": "https://meli.la/1ohpmLj"
+ },
+ {
+  "id": "grafite",
+  "nome": "Grafite pra lapiseira",
+  "unidade": "tubo",
+  "unidade_pl": "tubos",
+  "emoji": "✏️",
+  "termos": [
+   "grafite-lapiseira-0.7"
+  ],
+  "grupo": "escrita",
+  "busca": "https://meli.la/1GhXqra"
+ },
+ {
+  "id": "lapis_bicolor",
+  "nome": "Lápis bicolor (azul/vermelho)",
+  "unidade": "lápis",
+  "unidade_pl": "lápis",
+  "emoji": "✏️",
+  "termos": [
+   "lapis-bicolor-azul-vermelho"
+  ],
+  "grupo": "escrita",
+  "busca": "https://meli.la/1SFGApd"
+ },
+ {
+  "id": "marcador_quadro",
+  "nome": "Marcador de quadro branco",
+  "unidade": "caneta",
+  "unidade_pl": "canetas",
+  "emoji": "🖊️",
+  "termos": [
+   "marcador-quadro-branco-kit"
+  ],
+  "grupo": "escrita",
+  "busca": "https://meli.la/2bKBse9"
+ },
+ {
+  "id": "canson",
+  "nome": "Bloco de papel canson / desenho",
+  "unidade": "bloco",
+  "unidade_pl": "blocos",
+  "emoji": "📄",
+  "termos": [
+   "bloco-papel-canson-a4",
+   "bloco-canson-a3"
+  ],
+  "grupo": "papeis",
+  "busca": "https://meli.la/11gVmqM"
+ },
+ {
+  "id": "papel_seda",
+  "nome": "Papel de seda",
+  "unidade": "folha",
+  "unidade_pl": "folhas",
+  "emoji": "🎀",
+  "termos": [
+   "papel-de-seda-colorido-kit"
+  ],
+  "grupo": "papeis",
+  "busca": "https://meli.la/2M3EfVr"
+ },
+ {
+  "id": "papel_laminado",
+  "nome": "Papel laminado",
+  "unidade": "folha",
+  "unidade_pl": "folhas",
+  "emoji": "✨",
+  "termos": [
+   "papel-laminado-kit"
+  ],
+  "grupo": "papeis",
+  "busca": "https://meli.la/1eq6uwN"
+ },
+ {
+  "id": "papel_cartao",
+  "nome": "Papel cartão",
+  "unidade": "folha",
+  "unidade_pl": "folhas",
+  "emoji": "🟧",
+  "termos": [
+   "papel-cartao-colorido-kit"
+  ],
+  "grupo": "papeis",
+  "busca": "https://meli.la/2Ap6dx4"
+ },
+ {
+  "id": "papel_dobradura",
+  "nome": "Papel dobradura / lustroso",
+  "unidade": "folha",
+  "unidade_pl": "folhas",
+  "emoji": "🟥",
+  "termos": [
+   "papel-dobradura-colorido",
+   "papel-lustroso-kit"
+  ],
+  "grupo": "papeis",
+  "busca": "https://meli.la/1wXcHJk"
+ },
+ {
+  "id": "isopor",
+  "nome": "Placa de isopor",
+  "unidade": "placa",
+  "unidade_pl": "placas",
+  "emoji": "⬜",
+  "termos": [
+   "placa-de-isopor-10mm"
+  ],
+  "grupo": "papeis",
+  "busca": "https://meli.la/1efa5nr"
+ },
+ {
+  "id": "envelope_pardo",
+  "nome": "Envelope pardo (kraft)",
+  "unidade": "envelope",
+  "unidade_pl": "envelopes",
+  "emoji": "✉️",
+  "termos": [
+   "envelope-pardo-a4-kit",
+   "envelope-saco-kraft-grande"
+  ],
+  "grupo": "organizacao",
+  "busca": "https://meli.la/2E9w7em"
+ },
+ {
+  "id": "saco_plastico",
+  "nome": "Saco plástico ofício (com furos)",
+  "unidade": "saco",
+  "unidade_pl": "sacos",
+  "emoji": "🗂️",
+  "termos": [
+   "envelope-plastico-oficio-4-furos",
+   "saco-plastico-oficio-pacote"
+  ],
+  "grupo": "organizacao",
+  "busca": "https://meli.la/1ByM95K"
+ },
+ {
+  "id": "pasta_portfolio",
+  "nome": "Pasta portfólio / polionda",
+  "unidade": "pasta",
+  "unidade_pl": "pastas",
+  "emoji": "📁",
+  "termos": [
+   "pasta-polionda-a3",
+   "pasta-portfolio-a4"
+  ],
+  "grupo": "organizacao",
+  "busca": "https://meli.la/2zeDq9D"
+ },
+ {
+  "id": "pasta_trilho",
+  "nome": "Pasta com trilho / grampo",
+  "unidade": "pasta",
+  "unidade_pl": "pastas",
+  "emoji": "📁",
+  "termos": [
+   "pasta-com-trilho-grampo-plastico"
+  ],
+  "grupo": "organizacao",
+  "busca": "https://meli.la/2mhevUy"
+ },
+ {
+  "id": "fita_dupla_face",
+  "nome": "Fita dupla face",
+  "unidade": "rolo",
+  "unidade_pl": "rolos",
+  "emoji": "🩹",
+  "termos": [
+   "fita-dupla-face-escolar"
+  ],
+  "grupo": "organizacao",
+  "busca": "https://meli.la/1iusUBZ"
+ },
+ {
+  "id": "tela_pintura",
+  "nome": "Tela para pintura",
+  "unidade": "tela",
+  "unidade_pl": "telas",
+  "emoji": "🖼️",
+  "termos": [
+   "tela-para-pintura-20x20",
+   "tela-pintura-kit"
+  ],
+  "grupo": "arte",
+  "busca": "https://meli.la/29NBk8S"
+ },
+ {
+  "id": "tinta_acrilica",
+  "nome": "Tinta acrílica",
+  "unidade": "pote",
+  "unidade_pl": "potes",
+  "emoji": "🎨",
+  "termos": [
+   "tinta-acrilica-kit-escolar"
+  ],
+  "grupo": "arte",
+  "busca": "https://meli.la/1x1odSQ"
+ },
+ {
+  "id": "biscuit",
+  "nome": "Massa de biscuit",
+  "unidade": "pacote",
+  "unidade_pl": "pacotes",
+  "emoji": "🟢",
+  "termos": [
+   "massa-de-biscuit-kit-cores"
+  ],
+  "grupo": "arte",
+  "busca": "https://meli.la/13SBjbr"
+ },
+ {
+  "id": "argila",
+  "nome": "Argila / massa de modelar natural",
+  "unidade": "pacote",
+  "unidade_pl": "pacotes",
+  "emoji": "🟤",
+  "termos": [
+   "argila-escolar-1kg"
+  ],
+  "grupo": "arte",
+  "busca": "https://meli.la/2HF1oyJ"
+ },
+ {
+  "id": "balao",
+  "nome": "Balão / bexiga",
+  "unidade": "pacote",
+  "unidade_pl": "pacotes",
+  "emoji": "🎈",
+  "termos": [
+   "balao-bexiga-n9-pacote-50"
+  ],
+  "grupo": "arte",
+  "busca": "https://meli.la/1ka3DVE"
+ },
+ {
+  "id": "la",
+  "nome": "Lã / fio de lã",
+  "unidade": "rolo",
+  "unidade_pl": "rolos",
+  "emoji": "🧶",
+  "termos": [
+   "novelo-de-la-colorido"
+  ],
+  "grupo": "arte",
+  "busca": "https://meli.la/2qReMGu"
+ },
+ {
+  "id": "chenille",
+  "nome": "Arame chenille (limpador de cachimbo)",
+  "unidade": "unidade",
+  "unidade_pl": "unidades",
+  "emoji": "🌀",
+  "termos": [
+   "arame-chenille-colorido-kit"
+  ],
+  "grupo": "arte",
+  "busca": "https://meli.la/1nwLD39"
+ },
+ {
+  "id": "cola_quente",
+  "nome": "Cola quente (bastão de silicone)",
+  "unidade": "bastão",
+  "unidade_pl": "bastões",
+  "emoji": "🔥",
+  "termos": [
+   "bastao-cola-quente-fino-kit"
+  ],
+  "grupo": "arte",
+  "busca": "https://meli.la/1jw4psc"
+ },
+ {
+  "id": "pistola_cola",
+  "nome": "Pistola de cola quente",
+  "unidade": "pistola",
+  "unidade_pl": "pistolas",
+  "emoji": "🔥",
+  "termos": [
+   "pistola-cola-quente-pequena"
+  ],
+  "grupo": "arte",
+  "busca": "https://meli.la/1i9byuh"
+ },
+ {
+  "id": "palito_churrasco",
+  "nome": "Palito de churrasco",
+  "unidade": "pacote",
+  "unidade_pl": "pacotes",
+  "emoji": "🍢",
+  "termos": [
+   "palito-de-churrasco-pacote"
+  ],
+  "grupo": "arte",
+  "busca": "https://meli.la/2JXqBt1"
+ },
+ {
+  "id": "esponja",
+  "nome": "Esponja / rolinho de pintura",
+  "unidade": "unidade",
+  "unidade_pl": "unidades",
+  "emoji": "🧽",
+  "termos": [
+   "kit-rolinho-esponja-pintura-infantil"
+  ],
+  "grupo": "arte",
+  "busca": "https://meli.la/2LnAXk2"
+ },
+ {
+  "id": "livro_infantil",
+  "nome": "Livro infantil de histórias",
+  "unidade": "livro",
+  "unidade_pl": "livros",
+  "emoji": "📚",
+  "termos": [
+   "livro-infantil-historias-kit",
+   "livro-de-historia-infantil"
+  ],
+  "grupo": "livros",
+  "busca": "https://meli.la/1zyvuqH"
+ },
+ {
+  "id": "gibi",
+  "nome": "Gibi",
+  "unidade": "gibi",
+  "unidade_pl": "gibis",
+  "emoji": "📖",
+  "termos": [
+   "gibi-turma-da-monica-kit"
+  ],
+  "grupo": "livros",
+  "busca": "https://meli.la/2LooV73"
+ },
+ {
+  "id": "passatempo",
+  "nome": "Livro de passatempo/atividades",
+  "unidade": "livro",
+  "unidade_pl": "livros",
+  "emoji": "🧩",
+  "termos": [
+   "livro-365-atividades-ciranda"
+  ],
+  "grupo": "livros",
+  "busca": "https://meli.la/2QFiQhe"
+ },
+ {
+  "id": "jogo_pedagogico",
+  "nome": "Jogo pedagógico",
+  "unidade": "jogo",
+  "unidade_pl": "jogos",
+  "emoji": "🧩",
+  "termos": [
+   "jogo-pedagogico-alfabetizacao",
+   "jogo-da-memoria-infantil-madeira",
+   "quebra-cabeca-infantil-50-pecas"
+  ],
+  "grupo": "livros",
+  "busca": "https://meli.la/1YAg2gK"
+ },
+ {
+  "id": "dicionario_ingles",
+  "nome": "Dicionário de inglês",
+  "unidade": "dicionário",
+  "unidade_pl": "dicionários",
+  "emoji": "📘",
+  "termos": [
+   "dicionario-escolar-ingles"
+  ],
+  "grupo": "livros",
+  "busca": "https://meli.la/333Nfaa"
+ },
+ {
+  "id": "escova_dente",
+  "nome": "Escova de dente infantil",
+  "unidade": "escova",
+  "unidade_pl": "escovas",
+  "emoji": "🪥",
+  "termos": [
+   "escova-de-dente-infantil-kit"
+  ],
+  "grupo": "higiene",
+  "busca": "https://meli.la/1fRnPZu"
+ },
+ {
+  "id": "creme_dental",
+  "nome": "Creme dental infantil",
+  "unidade": "tubo",
+  "unidade_pl": "tubos",
+  "emoji": "🪥",
+  "termos": [
+   "creme-dental-infantil-sem-fluor"
+  ],
+  "grupo": "higiene",
+  "busca": "https://meli.la/2wMrxd7"
+ },
+ {
+  "id": "toalha",
+  "nome": "Toalha de mão / rosto",
+  "unidade": "toalha",
+  "unidade_pl": "toalhas",
+  "emoji": "🧺",
+  "termos": [
+   "toalha-de-mao-infantil-bordado",
+   "toalha-de-rosto-kit"
+  ],
+  "grupo": "higiene",
+  "busca": "https://meli.la/2beqDmc"
+ },
+ {
+  "id": "lenco_umedecido",
+  "nome": "Lenço umedecido",
+  "unidade": "pacote",
+  "unidade_pl": "pacotes",
+  "emoji": "🧻",
+  "termos": [
+   "lenco-umedecido-pacote"
+  ],
+  "grupo": "higiene",
+  "busca": "https://meli.la/22cEFzG"
+ },
+ {
+  "id": "guardanapo_pano",
+  "nome": "Guardanapo de pano",
+  "unidade": "guardanapo",
+  "unidade_pl": "guardanapos",
+  "emoji": "🍽️",
+  "termos": [
+   "guardanapo-de-pano-infantil"
+  ],
+  "grupo": "higiene",
+  "busca": "https://meli.la/2BcFsq5"
+ },
+ {
+  "id": "sabonete",
+  "nome": "Sabonete líquido infantil",
+  "unidade": "frasco",
+  "unidade_pl": "frascos",
+  "emoji": "🧴",
+  "termos": [
+   "sabonete-liquido-infantil"
+  ],
+  "grupo": "higiene",
+  "busca": "https://meli.la/17W3VLR"
+ },
+ {
+  "id": "necessaire",
+  "nome": "Necessaire / porta escova",
+  "unidade": "necessaire",
+  "unidade_pl": "necessaires",
+  "emoji": "👝",
+  "termos": [
+   "porta-escova-de-dente-infantil-estojo"
+  ],
+  "grupo": "higiene",
+  "busca": "https://meli.la/1Lx8ijk"
+ },
+ {
+  "id": "transferidor",
+  "nome": "Transferidor",
+  "unidade": "transferidor",
+  "unidade_pl": "transferidores",
+  "emoji": "📐",
+  "termos": [
+   "transferidor-180-escolar"
+  ],
+  "grupo": "geometria",
+  "busca": "https://meli.la/1jrB1so"
+ },
+ {
+  "id": "pasta_sanfonada",
+  "nome": "Pasta sanfonada",
+  "unidade": "pasta",
+  "unidade_pl": "pastas",
+  "emoji": "📂",
+  "termos": [
+   "pasta-sanfonada-a4-12-divisorias"
+  ],
+  "grupo": "organizacao",
+  "busca": "https://meli.la/2b1Gg3j"
  }
 ]

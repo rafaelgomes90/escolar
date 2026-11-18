@@ -102,7 +102,7 @@ with open(os.path.join(ROOT, "produtos.js"), "w", encoding="utf-8") as f:
 # ---------------------------------------------------------------- vitrine: o campeão de cada tipo
 GRUPOS = [("escrita", "Escrita"), ("cores", "Pra colorir"), ("cadernos", "Cadernos"), ("cola", "Colas"), ("corte", "Tesoura"),
           ("geometria", "Régua e geometria"), ("papeis", "Papéis e EVA"), ("arte", "Arte"), ("organizacao", "Organização"),
-          ("mochila", "Mochila e lancheira"), ("livros", "Dicionário")]
+          ("mochila", "Mochila e lancheira"), ("higiene", "Higiene"), ("livros", "Livros, gibis e jogos")]
 vit = ""
 for gid, gnome in GRUPOS:
     cards = []
