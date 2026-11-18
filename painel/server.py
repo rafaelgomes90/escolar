@@ -17,7 +17,7 @@ IMGS = os.path.join(os.path.dirname(DB) or '.', 'img')
 GEMINI_KEY = os.environ.get('GEMINI_KEY', '').strip()
 if not GEMINI_KEY and os.path.exists('/segredo/gemini_key'):
     GEMINI_KEY = open('/segredo/gemini_key').read().strip()
-MODELOS = [m for m in os.environ.get('GEMINI_MODELOS', 'gemini-flash-latest,gemini-2.5-flash,gemini-flash-lite-latest').split(',') if m]
+MODELOS = [m for m in os.environ.get('GEMINI_MODELOS', 'gemini-2.5-flash,gemini-flash-latest,gemini-2.5-flash-lite').split(',') if m]
 LIMITE_DIA = int(os.environ.get('LIMITE_DIA', 900))
 _T = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'tipos.json'), encoding='utf-8'))
 TIPOS_OK = {t['id'] for t in _T}
@@ -248,13 +248,16 @@ class H(BaseHTTPRequestHandler):
             prompt += '\n\nLISTA DIGITADA PELO USUÁRIO:\n' + texto
         corpo = {'contents': [{'role': 'user', 'parts': partes + [{'text': prompt}]}],
                  'generationConfig': {'temperature': 0.1, 'responseMimeType': 'application/json', 'responseSchema': ESQUEMA}}
-        ult = None
+        ult = None; t0 = time.time()
         for modelo in MODELOS:
+            gc = dict(corpo['generationConfig'])
+            gc['thinkingConfig'] = {'thinkingBudget': 0} if '2.5' in modelo else {'thinkingLevel': 'low'}
+            corpo['generationConfig'] = gc
             try:
                 req = urllib.request.Request(f'https://generativelanguage.googleapis.com/v1beta/models/{modelo}:generateContent',
                                              data=json.dumps(corpo).encode(), method='POST',
                                              headers={'Content-Type': 'application/json', 'x-goog-api-key': GEMINI_KEY})
-                with urllib.request.urlopen(req, timeout=90) as r:
+                with urllib.request.urlopen(req, timeout=40) as r:
                     resp = json.load(r)
                 txt = ''.join(p.get('text', '') for p in resp['candidates'][0]['content']['parts'])
                 out = json.loads(txt)
@@ -266,7 +269,7 @@ class H(BaseHTTPRequestHandler):
                                   'cores': int(it['cores']) if str(it.get('cores') or '').isdigit() else None,
                                   'folhas': int(it['folhas']) if str(it.get('folhas') or '').isdigit() else None,
                                   'det': clip(it.get('det'), 80), 'busca': clip(it.get('busca'), 60)})
-                print(f'lista lida ({modelo}): {len(itens)} itens', flush=True)
+                print(f'lista lida ({modelo}, {time.time()-t0:.1f}s): {len(itens)} itens', flush=True)
                 return self._json(200, {'aluno': clip(out.get('aluno'), 40), 'serie': clip(out.get('serie'), 40),
                                         'legivel': bool(out.get('legivel', True)), 'itens': itens})
             except urllib.error.HTTPError as e:
