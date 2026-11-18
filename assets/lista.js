@@ -100,7 +100,7 @@
     c = porAttr(c, 'cores', it.cores);
     c = porAttr(c, 'folhas', it.folhas);
     var mat = (temDet(it, /(\d+)\s*mat[ée]ria/) && +((it.det + ' ' + it.t).toLowerCase().match(/(\d+)\s*mat[ée]ria/)[1])) || 0;
-    if(mat) c = porAttr(c, 'materias', mat);
+    if(mat) c = porAttr(c, 'materias', mat); else if(it.tipo === 'caderno_universitario') c = pref0(c, function(p){ return !p.materias || p.materias === 1; });
     // preferências por detalhe (filtro que relaxa se zerar)
     function pref(lista, cond){ var f = lista.filter(cond); return f.length ? f : lista; }
     if(it.tipo === 'lapis') c = temDet(it, /\b[2-8]b\b/) ? pref(c, function(p){ return p.b2; }) : pref(c, function(p){ return !p.b2; });
