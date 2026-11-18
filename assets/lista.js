@@ -136,7 +136,12 @@
   }
 
   // ---------------------------------------------------------------- resultado
-  function titulo(){ return L.nome ? 'A lista do ' + L.nome : 'Sua lista de material'; }
+  // "do Noah" / "da Maria Clara": pelo primeiro nome (termina em a = feminino, com exceções)
+  var FEM = /^(alice|beatriz|isabel|isabelle|raquel|rachel|liz|sophie|esther|ester|ingrid|carmen|helo|heloise|agnes|ellen|karen|evelyn|emily|emilly|nicole|ruth|mel|maite|lis|ana luz|luz|clara luz|yasmin|jasmin|miriam|rute|ivy|joy|abigail|elis|ines|ingrid|cecily|mabel|noemi|zoe|chloe|isis|iris|sarah|deborah|rebekah|hannah|lorrane|kauane|thaise)$/;
+  var MASC = /^(luca|lucca|joshua|juca|nicola|jona|isaiah|elia|elias|noa|mustafa|andrea|giovanna?x)$/;
+  function art(n){ var p = (n || '').split(' ')[0].toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); return (FEM.test(p) || (/a$/.test(p) && !MASC.test(p))) ? 'da' : 'do'; }
+  function deNome(){ return art(L.nome) + ' ' + L.nome; }
+  function titulo(){ return L.nome ? 'A lista ' + deNome() : 'Sua lista de material'; }
   function linhaHTML(x, i){
     var it = x.it, tp = TIPO[it.tipo] || {emoji:'🔎', nome:'Outro'};
     if(!x.op.length){
@@ -179,7 +184,7 @@
   // ---------------------------------------------------------------- compartilhar
   function textoLista(link){
     var t = total(), l = [];
-    var cab = (L.nome ? '📚 A lista de material do '+L.nome : '📚 A lista de material') + ' ficou *R$ '+brl0(t.v)+'* lá no Oferta do Rafa!';
+    var cab = (L.nome ? '📚 A lista de material '+deNome() : '📚 A lista de material') + ' ficou *R$ '+brl0(t.v)+'* lá no Oferta do Rafa!';
     if(link) l.push(cab, '👉 Veja e monte a sua: '+link, ''); else l.push(cab, '', 'Monte a sua: '+SITE, '');
     L.linhas.forEach(function(x){
       if(!x.op.length) return;
@@ -219,7 +224,7 @@
       c.strokeStyle = '#EE9A9A'; c.lineWidth = 3; c.beginPath(); c.moveTo(96,0); c.lineTo(96,H); c.stroke();
       c.fillStyle = '#1D3A8A'; c.font = '700 26px Inter, sans-serif'; c.fillText((L.serie ? L.serie.toUpperCase()+' · ' : '')+'LISTA DE MATERIAL', 130, 116);
       c.fillStyle = '#16213E'; c.font = '800 66px "Bricolage Grotesque", Inter, sans-serif';
-      var tit = L.nome ? 'A lista do '+L.nome : 'Minha lista'; c.fillText(tit, 130, 196);
+      var tit = L.nome ? 'A lista '+deNome() : 'Minha lista'; c.fillText(tit, 130, 196);
       c.font = '700 40px Inter, sans-serif'; c.fillStyle = '#3B4766'; c.fillText('ficou', 130, 262);
       var lw = c.measureText('ficou ').width;
       c.font = '800 46px Inter, sans-serif'; var tw = c.measureText('R$ '+brl0(t.v)).width;
@@ -250,7 +255,7 @@
     return {nome:L.nome, total:Math.round(t.v),
       itens:L.linhas.filter(function(x){ return x.op.length; }).map(function(x){ var o = x.op[x.k]; return {id:o.p.id, q:o.pk, l:x.it.t}; }),
       fora:L.linhas.filter(function(x){ return !x.op.length; }).map(function(x){ return x.it.t; }),
-      titulo:(L.nome ? 'A lista de material do '+L.nome : 'Lista de material escolar')+' ficou R$ '+brl0(t.v),
+      titulo:(L.nome ? 'A lista de material '+deNome() : 'Lista de material escolar')+' ficou R$ '+brl0(t.v),
       resumo:t.n+' itens com link do Mercado Livre. Tire uma foto da sua lista e veja quanto fica.'};
   }
   function salvarLista(){
@@ -292,7 +297,7 @@
       if(!linhas.length) throw 0;
       L = {nome:m.nome || '', serie:'', linhas:linhas, compartilhada:true};
       desenhar(); res.hidden = false;
-      var av = document.getElementById('aviso-comp'); if(av){ av.hidden = false; av.querySelector('b').textContent = L.nome ? 'Essa é a lista do '+L.nome+'.' : 'Essa é uma lista que te mandaram.'; }
+      var av = document.getElementById('aviso-comp'); if(av){ av.hidden = false; av.querySelector('b').textContent = L.nome ? 'Essa é a lista '+deNome()+'.' : 'Essa é uma lista que te mandaram.'; }
       res.scrollIntoView({block:'start'});
       CSA.trackC('AbriuListaCompartilhada', {total:m.total||0});
       if(CSA.hit) CSA.hit('lista', 'Lista compartilhada aberta');
